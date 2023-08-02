@@ -1,12 +1,12 @@
-@import url('./reset.css');
-@import url('./fonts.css');
-@import url('./header.css');
-@import url('./start.css');
-@import url('./support.css');
-@import url('./home.css');
-@import url('./cathegory.css');
-@import url('./shopping-list.css');
-@import url('./pop-up.css');
+@import url('./css/reset.css');
+@import url('./css/fonts.css');
+@import url('./css/header.css');
+@import url('./css/start.css');
+@import url('./css/support.css');
+@import url('./css/home.css');
+@import url('./css/cathegory.css');
+@import url('./css/shopping-list.css');
+@import url('./css/pop-up.css');
 
 :root {
 	--font-family: 'DM Sans', sans-serif;
