@@ -22,7 +22,8 @@
     "basiclightbox": "^5.0.4",
     "caniuse-lite": "^1.0.30001519",
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.6"
+    "notiflix": "^3.2.6",
+    "simplelightbox": "^2.14.1"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
