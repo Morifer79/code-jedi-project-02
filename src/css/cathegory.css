@@ -1,12 +1,27 @@
+.container {
+     padding: 0 20px;
+}
+
 .category-title{
 color: #111;
-font-size: 48px;
+font-family: var(--font-family);
+font-size: 32px;
 font-style: normal;
-line-height: 52px; /* 108.333% */
-letter-spacing: -1.92px; 
+line-height: 38px; /* 118.75% */
+letter-spacing: -1.28px; 
 padding: 40px 0 40px 20px;
 }
 
 .category-title-color{
 color: #4F2EE8;
+}
+
+.category-link{
+    color: rgba(17, 17, 17, 0.60);
+font-family: var(--font-family);
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px; /* 112.5% */
+letter-spacing: -0.32px;
 }
