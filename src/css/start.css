@@ -1,8 +1,8 @@
-.is-hidden {
+/* .is-hidden {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-}
+} */
 
 .backdrop {
   z-index: 3;
@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   background-color: var(--violet);
-  /* transition: opacity var(--transition), visibility var(--transition); */
+  transition: opacity var(--transition), visibility var(--transition);
 }
 
 .backdrop.is-hidden .modal {
@@ -92,7 +92,7 @@
 .svg-email,
 .svg-password {
   position: absolute;
-  right: 16px;
+  right: 44px;
   top: 16px;
   width: 18px;
   height: 18px;
@@ -117,9 +117,9 @@
   transition: background-color (--transition), color var (--transition);
 }
 
-.signup-btn:is(:hover,:focus) {
-    background-color: var(--light-bg);
-    color: var(--black-1);
+.signup-btn:is(:hover, :focus) {
+  background-color: var(--light-bg);
+  color: var(--black-1);
 }
 
 .authorization-input::placeholder {
@@ -133,8 +133,8 @@
 
 .svg-email,
 .svg-password {
-    width: 18px;
-    height: 18px;
+  width: 18px;
+  height: 18px;
   fill: none;
   stroke: var(--black);
 }
@@ -154,8 +154,8 @@
   transition: box-shadow var(--transition);
 }
 
-   .sign-link:is(:hover, :focus) {
-    box-shadow: 0px 3px 3px 0px rgba(250, 249, 249, 0.15);
+.sign-link:is(:hover, :focus) {
+  box-shadow: 0px 3px 3px 0px rgba(250, 249, 249, 0.15);
 }
 
 .sign-up-link {
@@ -194,7 +194,7 @@
 
   .svg-email,
   .svg-password {
-    right: 18px;
+    right: 32px;
     top: 18px;
     width: 28px;
     height: 28px;
@@ -216,8 +216,6 @@
     letter-spacing: -0.18px;
   }
 
- 
-
   .sign-link {
     font-size: 18px;
     line-height: 1.33;
@@ -228,46 +226,39 @@
 /* 
   dark theme */
 
-  .modal {
-background-color: var(--black-1);
-
-  }
-
-  
-    .authorization-input {
-      outline: 2px solid var(--light-bg);
-      background-color: var(--black-1);
-
-    }
-  
-    .signup-btn {
-      background: var(--light-bg);
-      color: var(--black-1);
-       }
-
-       .signup-btn:is(:hover,:focus) {
-    background-color: var(--black-1);
-    color: var(--light-bg);
-    border: 2px solid var(--light-bg);
+.modal {
+  background-color: var(--black-1);
 }
-  
-       .authorization-input::placeholder {
-          color: var(--light-bg);
-        }
-  
 
-       
-        .sign-in-link {
-          color:  rgba(246, 246, 246, 0.50);
-          
-        }
+.authorization-input {
+  outline: 2px solid var(--light-bg);
+  background-color: var(--black-1);
+}
 
+.signup-btn {
+  background: var(--light-bg);
+  color: var(--black-1);
+}
 
+.signup-btn:is(:hover, :focus) {
+  background-color: var(--black-1);
+  color: var(--light-bg);
+  border: 2px solid var(--light-bg);
+}
 
-        .close-icon {
-            stroke: var(--light-bg);
-        }
+.authorization-input::placeholder {
+  color: var(--light-bg);
+}
 
-.svg-email, .svg-password {
-            stroke: var(--light-bg);
-        }
+.sign-in-link {
+  color: rgba(246, 246, 246, 0.5);
+}
+
+.close-icon {
+  stroke: var(--light-bg);
+}
+
+.svg-email,
+.svg-password {
+  stroke: var(--light-bg);
+}
