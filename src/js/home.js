@@ -31,7 +31,7 @@ function createMarkupHome(data) {
         )
         .join('')}
       </ul>
-      <button type="button" class="home-category-btn">see more</button>
+      <button type="button" class="home-category-btn js-seemore-btn">see more</button>
     </div>`
     )
     .join('');
