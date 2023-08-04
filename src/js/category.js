@@ -1,37 +1,54 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const categoriesList = document.querySelectorAll('.categories li');
+import axios from 'axios';
 
-  categoriesList.forEach((category) => {
-    category.addEventListener('click', () => {
-      const selectedCategory = category.dataset.category;
-      renderContent(selectedCategory);
-      console.log(selectedCategory);
+const categoriesAll = "https://books-backend.p.goit.global/books/category-list";
+
+document.addEventListener('DOMContentLoaded', function () {
+  const libraryLinks = document.querySelectorAll('.library-link');
+  const existingCategoryLinks = document.querySelectorAll('.category-link');
+
+  libraryLinks.forEach((link) => {
+    link.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const selectedCategory = link.dataset.category;
+      try {
+        const response = await axios.get(`https://books-backend.p.goit.global/books/category?category=${selectedCategory}`);
+        renderContent(selectedCategory, response.data);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+        renderError();
+      }
+    });
+  });
+
+  existingCategoryLinks.forEach((link) => {
+    link.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const selectedCategory = link.dataset.category;
+      try {
+        const response = await axios.get(`https://books-backend.p.goit.global/books/category?category=${selectedCategory}`);
+        renderContent(selectedCategory, response.data);
+      } catch (error) {
+        console.error('Error fetching books:', error);
+        renderError();
+      }
     });
   });
 });
 
-async function renderContent(category) {
+function renderContent(category, books) {
   const contentContainer = document.querySelector('.content-container');
-  
-  try {
-    const response = await fetchApiFunction(category);
-    const data = await response.json();
-    
-    let booksMarkup = '';
-    if (data.length === 0) {
-      booksMarkup = '<p>No books found in this category.</p>';
-    } else {
-      data.forEach(book => {
-        booksMarkup += createMarkup(book);
-      });
-    }
 
-    const categoryMarkup = `<h2>${category}</h2>`;
-    contentContainer.innerHTML = categoryMarkup + booksMarkup;
-  } catch (error) {
-    console.error('Error fetching books:', error);
-    contentContainer.innerHTML = '<p>Error fetching books.</p>';
+  let booksMarkup = '';
+  if (books.length === 0) {
+    booksMarkup = '<p>No books found in this category.</p>';
+  } else {
+    books.forEach(book => {
+      booksMarkup += createMarkup(book);
+    });
   }
+
+  const categoryMarkup = `<h2>${category}</h2>`;
+  contentContainer.innerHTML = categoryMarkup + booksMarkup;
 }
 
 function createMarkup(book) {
@@ -42,7 +59,8 @@ function createMarkup(book) {
     </div>
   `;
 }
-async function fetchApiFunction(category) {
-  const response = await fetch(`https://books-backend.p.goit.global/books/category?category=${category}`);
-  return response;
+
+function renderError() {
+  const contentContainer = document.querySelector('.content-container');
+  contentContainer.innerHTML = '<p>An error occurred while fetching books.</p>';
 }
