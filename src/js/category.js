@@ -42,3 +42,7 @@ function createMarkup(book) {
     </div>
   `;
 }
+async function fetchApiFunction(category) {
+  const response = await fetch(`https://books-backend.p.goit.global/books/category?category=${category}`);
+  return response;
+}
