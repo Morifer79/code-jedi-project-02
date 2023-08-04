@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Notiflix from 'notiflix';
 const container = document.querySelector('.js-home-markup');
 
 const HOME_REQ = 'https://books-backend.p.goit.global/books/top-books';
@@ -9,7 +10,9 @@ axios
     console.log(data);
     return container.insertAdjacentHTML('beforeend', createMarkupCards(data));
   })
-  .catch(err => console.log(err));
+  .catch(err =>
+    Notiflix.Notify.failure('Failed to load books. Please try again later.')
+  );
 
 function createMarkupCards(data) {
   const markup = data

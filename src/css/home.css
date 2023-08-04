@@ -1,6 +1,5 @@
 .hero-title {
   color: var(--black);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: var(--font-family);
   font-size: 32px;
   font-style: normal;
@@ -9,6 +8,7 @@
   letter-spacing: -1.28px;
   margin-bottom: 40px;
   min-width: 260px;
+  transition: text-shadow var(--transition);
 }
 .hero-title-accent {
   color: var(--violet);
@@ -17,7 +17,6 @@
   display: flex;
   flex-direction: column;
 }
-
 .home-category-title {
   color: #b4afaf;
   font-family: var(--font-family);
@@ -47,7 +46,6 @@
 }
 .home-card-title {
   color: var(--black);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-family: var(--font-family);
   font-size: 16px;
   font-style: normal;
@@ -56,6 +54,12 @@
   letter-spacing: -0.64px;
   text-transform: uppercase;
   margin-bottom: 4px;
+  transition: text-shadow var(--transition);
+}
+.home-category-btn:is(:hover, :focus),
+.hero-title:is(:hover, :focus),
+.home-card:is(:hover, :focus) .home-card-title {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .home-card-author {
   color: #b4afaf;
@@ -81,6 +85,7 @@
   text-transform: uppercase;
   align-self: flex-end;
   margin-bottom: 40px;
+  transition: text-shadow var(--transition);
 }
 
 @media screen and (min-width: 768px) {
@@ -97,7 +102,7 @@
   .home-card {
     display: flex;
     flex-direction: column;
-    width: 214px;
+    flex-basis: calc((100% - 50)/3);
   }
   .home-card:nth-child(n + 4) {
     display: none;
@@ -114,8 +119,11 @@
 }
 
 @media screen and (min-width: 1400px) {
-  .container {
+  .home-container.container {
     width: 996px;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
   }
   .home-card:nth-child(n)  {
     display: block;
@@ -126,7 +134,7 @@
     gap: 24px;
   }
   .home-card {
-    width: 180px;
+    flex-basis: calc((100% - 100)/5);
   }
   .home-card img {
     width: 180px;
