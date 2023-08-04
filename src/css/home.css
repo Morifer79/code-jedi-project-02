@@ -1,7 +1,7 @@
 .hero-title {
   color: var(--black);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: DM Sans;
+  font-family: var(--font-family);
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -20,7 +20,7 @@
 
 .home-category-title {
   color: #b4afaf;
-  font-family: DM Sans;
+  font-family: var(--font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -48,7 +48,7 @@
 .home-card-title {
   color: var(--black);
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: DM Sans;
+  font-family: var(--font-family);
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -59,7 +59,7 @@
 }
 .home-card-author {
   color: #b4afaf;
-  font-family: DM Sans;
+  font-family: var(--font-family);
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -69,10 +69,10 @@
 }
 .home-category-btn {
   border-radius: 40px;
-  border: 2px solid #4f2ee8;
+  border: 2px solid var(--violet);
   padding: 14px 28px;
   color: #111;
-  font-family: DM Sans;
+  font-family: var(--font-family);
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -117,7 +117,7 @@
   .container {
     width: 996px;
   }
-  .home-card:nth-child() {
+  .home-card:nth-child(n)  {
     display: block;
   }
   .home-category-cards {
