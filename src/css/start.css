@@ -96,6 +96,9 @@
   top: 16px;
   width: 18px;
   height: 18px;
+
+	fill: none;
+	stroke: var(--black);
 }
 
 .signup-btn {
@@ -129,14 +132,6 @@
   line-height: 1.33;
   letter-spacing: -0.18px;
   text-transform: uppercase;
-}
-
-.svg-email,
-.svg-password {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: var(--black);
 }
 
 .link-wrapper {
@@ -221,44 +216,4 @@
     line-height: 1.33;
     letter-spacing: -0.18px;
   }
-}
-
-/* 
-  dark theme */
-
-.modal {
-  background-color: var(--black-1);
-}
-
-.authorization-input {
-  outline: 2px solid var(--light-bg);
-  background-color: var(--black-1);
-}
-
-.signup-btn {
-  background: var(--light-bg);
-  color: var(--black-1);
-}
-
-.signup-btn:is(:hover, :focus) {
-  background-color: var(--black-1);
-  color: var(--light-bg);
-  border: 2px solid var(--light-bg);
-}
-
-.authorization-input::placeholder {
-  color: var(--light-bg);
-}
-
-.sign-in-link {
-  color: rgba(246, 246, 246, 0.5);
-}
-
-.close-icon {
-  stroke: var(--light-bg);
-}
-
-.svg-email,
-.svg-password {
-  stroke: var(--light-bg);
 }
