@@ -29,11 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   
   function createMarkup(book) {
-    return `
-      <div class="book">
-        <img src="${book.book_image}" alt="${book.title}" />
-        <p>${book.title} by ${book.author}</p>
-      </div>
-    `;
+    return 
+    
   }
-  
+}
