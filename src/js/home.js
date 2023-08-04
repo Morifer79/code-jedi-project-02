@@ -8,13 +8,13 @@ axios
   .get(`${HOME_REQ}`)
   .then(({ data }) => {
     console.log(data);
-    return container.insertAdjacentHTML('beforeend', createMarkupCards(data));
+    return container.insertAdjacentHTML('beforeend', createMarkupHome(data));
   })
   .catch(err =>
     Notiflix.Notify.failure('Failed to load books. Please try again later.')
   );
 
-function createMarkupCards(data) {
+function createMarkupHome(data) {
   const markup = data
     .map(
       data => `
