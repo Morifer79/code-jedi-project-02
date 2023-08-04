@@ -7,6 +7,7 @@
 @import url('./css/cathegory.css');
 @import url('./css/shopping-list.css');
 @import url('./css/pop-up.css');
+@import url('./css/go-top.css');
 
 :root {
 	--font-family: 'DM Sans', sans-serif;
@@ -15,6 +16,7 @@
 	--violet: #4F2EE8;
 	--yellow: #EAC645;
 	--white: #FFF;
+	--grey: #B4AFAF;
 
 	--light-bg: #F6F6F6;
 	--transition: 250ms linear;
