@@ -1,0 +1,264 @@
+/* .is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+} */
+
+.backdrop {
+  z-index: 3;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--violet);
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+
+.modal {
+  position: absolute;
+  max-width: 335px;
+  top: 50%;
+  left: 50%;
+  padding: 40px 20px;
+  transition: transform var(--transition);
+  transform: translate(-50%, -50%) scale(1);
+  background-color: var(--light-bg);
+  border-radius: 18px;
+  border: 2px solid var(--black);
+}
+
+.modal-close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 14px;
+  right: 14px;
+  border: none;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding: 0;
+  background-color: transparent;
+  transition: scale var(--transition);
+}
+
+.modal-close:is(:hover, :focus) .close-icon {
+  stroke: var(--violet);
+}
+
+.close-icon {
+  stroke: var(--black);
+  transition: stroke var(--transition);
+  width: 20px;
+  height: 20px;
+}
+
+.authorization-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authorization-input {
+  width: 295px;
+  padding: 16px 24px;
+  border-radius: 40px;
+  border: 2px solid var(--black);
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -0.16px;
+  text-transform: uppercase;
+}
+
+.input-email-wrapper {
+  position: relative;
+  margin: 24px 0;
+}
+
+.input-password-wrapper {
+  position: relative;
+}
+
+.svg-email,
+.svg-password {
+  position: absolute;
+  right: 44px;
+  top: 16px;
+  width: 18px;
+  height: 18px;
+}
+
+.signup-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 294px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  padding: 16px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.13;
+  letter-spacing: -0.16px;
+  border-radius: 40px;
+  text-transform: uppercase;
+  background-color: var(--black);
+  color: var(--white);
+  transition: background-color (--transition), color var (--transition);
+}
+
+.signup-btn:is(:hover, :focus) {
+  background-color: var(--light-bg);
+  color: var(--black-1);
+}
+
+.authorization-input::placeholder {
+  color: var(--black);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: -0.18px;
+  text-transform: uppercase;
+}
+
+.svg-email,
+.svg-password {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--black);
+}
+
+.link-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.sign-link {
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.29;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  transition: box-shadow var(--transition);
+}
+
+.sign-link:is(:hover, :focus) {
+  box-shadow: 0px 3px 3px 0px rgba(250, 249, 249, 0.15);
+}
+
+.sign-up-link {
+  text-decoration-line: underline;
+  color: var(--violet);
+}
+
+.sign-in-link {
+  color: rgba(17, 17, 17, 0.5);
+}
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media screen and (min-width: 768px) {
+  .modal {
+    max-width: 579px;
+    padding: 80px 40px 40px 40px;
+  }
+
+  .modal-close {
+    width: 28px;
+    height: 28px;
+    top: 24px;
+    right: 24px;
+  }
+
+  .authorization-input {
+    width: 499px;
+    padding: 20px 20px 20px 40px;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.18px;
+  }
+
+  .input-email-wrapper {
+    margin: 28px 0;
+  }
+
+  .svg-email,
+  .svg-password {
+    right: 32px;
+    top: 18px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .authorization-input::placeholder {
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.18px;
+  }
+
+  .signup-btn {
+    width: 499px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.18px;
+  }
+
+  .sign-link {
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.18px;
+  }
+}
+
+/* 
+  dark theme */
+
+.modal {
+  background-color: var(--black-1);
+}
+
+.authorization-input {
+  outline: 2px solid var(--light-bg);
+  background-color: var(--black-1);
+}
+
+.signup-btn {
+  background: var(--light-bg);
+  color: var(--black-1);
+}
+
+.signup-btn:is(:hover, :focus) {
+  background-color: var(--black-1);
+  color: var(--light-bg);
+  border: 2px solid var(--light-bg);
+}
+
+.authorization-input::placeholder {
+  color: var(--light-bg);
+}
+
+.sign-in-link {
+  color: rgba(246, 246, 246, 0.5);
+}
+
+.close-icon {
+  stroke: var(--light-bg);
+}
+
+.svg-email,
+.svg-password {
+  stroke: var(--light-bg);
+}
