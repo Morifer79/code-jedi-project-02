@@ -15,7 +15,8 @@ export class Spiner {
     getEl() {
       return this.bookSpinerEl;
     }
-  }
+}
+
 
 const globalRefs = {
   backdrop: document.querySelector('.backdrop-js'),
@@ -70,20 +71,58 @@ if (currentStorage) {
 
         spiner.hide();
 
-        const closeModalBtn = document.querySelector('.modal__close-btn-js');
-
+        const refs = {
+            addBtn: document.querySelector('.modal__add-btn-js'),
+            removeBlock: document.querySelector('.modal__remove-block-js'),
+            removeBtn: document.querySelector('.modal__remove-btn-js'),
+            closeModalBtn: document.querySelector('.modal__close-btn-js'),
+        };
+      
+        refs.removeBlock.classList.add('is-hidden');
+      
+        if (!IsUserLogged) {
+            refs.addBtn.classList.add('is-hidden');
+        }
+      
+        const isBookInStorage = bookArray.find(book => book._id === bookData._id);
+        const bookIndex = bookArray.indexOf(isBookInStorage);
+      
+        if (isBookInStorage && IsUserLogged) {
+            refs.addBtn.classList.add('is-hidden');
+            refs.removeBlock.classList.remove('is-hidden');
+        }
+      
         window.addEventListener('keydown', handleEscKeyPress);
         window.addEventListener('click', handleBackDropClick);
-
+        refs.addBtn.addEventListener('click', handleAddBtnClick);
+        refs.removeBtn.addEventListener('click', handleRemoveBtnClick);
         refs.closeModalBtn.addEventListener('click', handleCloseModalBtnClick);
-
+      
         function handleCloseModalBtnClick() {
             closeModal();
             removeListeners();
             clearInterface();
             document.body.classList.remove('modal-open');
         }
-
+      
+        function handleAddBtnClick() {
+            bookArray.push(bookData);
+      
+            localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+            writeUserData(bookArray); //Write user shopping list to DB
+            refs.addBtn.classList.add('is-hidden');
+            refs.removeBlock.classList.remove('is-hidden');
+        }
+      
+        function handleRemoveBtnClick() {
+            bookArray.splice(bookIndex, 1);
+            writeUserData(bookArray); //Write user shopping list to DB
+            localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+      
+            refs.addBtn.classList.remove('is-hidden');
+            refs.removeBlock.classList.add('is-hidden');
+        }
+      
         function handleEscKeyPress(evt) {
             const isEsc = evt.code === 'Escape';
             if (isEsc) {
@@ -92,32 +131,32 @@ if (currentStorage) {
               clearInterface();
               document.body.classList.remove('modal-open');
             }
-          }
+        }
       
-          function handleBackDropClick(evt) {
+        function handleBackDropClick(evt) {
             if (evt.target === globalRefs.backdrop) {
               closeModal();
               removeListeners();
               clearInterface();
               document.body.classList.remove('modal-open');
             }
-          }
+        }
       
-          function closeModal() {
+        function closeModal() {
             globalRefs.modal.classList.add('is-hidden');
             globalRefs.backdrop.classList.add('is-hidden');
-          }
+        }
       
-          function removeListeners() {
+        function removeListeners() {
             window.removeEventListener('keydown', handleEscKeyPress);
             window.removeEventListener('click', handleBackDropClick);
-          }
+        }
       
-          function clearInterface() {
+        function clearInterface() {
             globalRefs.modal.innerHTML = '';
-          }
+        }
+
         } catch (error) {
         console.log(error);
-
     }
   }
