@@ -1,4 +1,4 @@
-<button type="button" class="modal-close" data-modal-open>Open</button>
+<button type="button" class="modal-close" data-modal-open>open</button>
 
 <div class="backdrop is-hidden" data-modal>
   <div class="modal">
@@ -8,18 +8,30 @@
       </svg>
     </button>
     <form class="authorization-form" id="authForm" action="">
-      <input class="authorization-input" type="text" placeholder="NAME" maxlength="32" required
-     />
+      <input
+        class="authorization-input"
+        type="text"
+        placeholder="NAME"
+        maxlength="32"
+        required
+      />
 
       <div class="input-email-wrapper">
-        <input class="authorization-input" id="emailInput" type="email" placeholder="EMAIL" required/>
+        <input
+          class="authorization-input"
+          id="emailInput"
+          type="email"
+          placeholder="EMAIL"
+          required
+        />
         <svg class="svg-email">
           <use href="./images/sprite.svg#mail"></use>
         </svg>
       </div>
       <div class="input-password-wrapper">
         <input
-          class="authorization-input" id="passwordInput"
+          class="authorization-input"
+          id="passwordInput"
           type="password"
           placeholder="PASSWORD"
           required

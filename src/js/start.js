@@ -4,19 +4,63 @@ import 'firebase/database';
 
 // конфігурація проєкту Firebase
 const firebaseConfig = {
-  apiKey: 'YAIzaSyAebBdjN9n82637h_F6UeUrgHEOJRMfnmg',
-  authDomain: 'book-project.firebaseapp.com',
-  projectId: 'book-project-dec87',
-  storageBucket: 'book-project-dec87.appspot.com',
-  messagingSenderId: '888871207725',
-  appId: '1:888871207725:web:e9b3c5c35febc94926c9a4',
+  apiKey: 'Your_API_Key',
+  authDomain: 'Your_Auth_Domain',
+  projectId: 'Your_Project_Id',
+  storageBucket: 'Your_Storage_Bucket',
+  messagingSenderId: 'Your_Messaging_Sender_Id',
+  appId: 'Your_App_Id',
 };
 
-// Ініціалізація Firebase
 
-firebase.initializeApp(firebaseConfig);
+async function initializeFirebase() {
+  await firebase.initializeApp(firebaseConfig);
+}
 
-(() => {
+const authForm = document.getElementById('authForm');
+const signUpLink = document.querySelector('.sign-up-link');
+const signInLink = document.querySelector('.sign-in-link');
+const signUpBtn = document.getElementById('signupBtn');
+
+signUpLink.addEventListener('click', toggleAuthMode);
+signInLink.addEventListener('click', toggleAuthMode);
+authForm.addEventListener('submit', handleAuthFormSubmit);
+
+function toggleAuthMode(event) {
+  event.preventDefault();
+  signUpBtn.textContent = event.target.classList.contains('sign-up-link')
+    ? 'SIGN UP'
+    : 'SIGN IN';
+}
+
+
+async function handleAuthFormSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('emailInput').value;
+  const password = document.getElementById('passwordInput').value;
+  const isSignUp = signUpBtn.textContent === 'SIGN UP';
+
+  try {
+    await initializeFirebase();
+
+    if (isSignUp) {
+      const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
+      const user = userCredential.user;
+      console.log('Registration successful:', user);
+      toggleModal();
+    } else {
+      const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+      const user = userCredential.user;
+      console.log('Authorization successful:', user);
+      toggleModal();
+    }
+  } catch (error) {
+    console.error('Authentication error: Please try again', error);
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
   const refs = {
     openModalBtn: document.querySelector('[data-modal-open]'),
     closeModalBtn: document.querySelector('[data-modal-close]'),
@@ -34,54 +78,15 @@ firebase.initializeApp(firebaseConfig);
       document.body.style.overflow = '';
     }
   }
-})();
 
-const authForm = document.getElementById('authForm');
-const signUpLink = document.querySelector('.sign-up-link');
-const signInLink = document.querySelector('.sign-in-link');
-const signUpBtn = document.getElementById('signupBtn');
+  const authForm = document.getElementById('authForm');
+  const signUpLink = document.querySelector('.sign-up-link');
+  const signInLink = document.querySelector('.sign-in-link');
+  const signUpBtn = document.getElementById('signupBtn');
 
-signUpLink.addEventListener('click', toggleAuthMode);
-signInLink.addEventListener('click', toggleAuthMode);
-
-function toggleAuthMode(event) {
-  event.preventDefault();
-  signUpBtn.textContent = event.target.classList.contains('sign-up-link')
-    ? 'SIGN UP'
-    : 'SIGN IN';
-}
-
-authForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const email = document.getElementById('emailInput').value;
-  const password = document.getElementById('passwordInput').value;
-  const isSignUp = signUpBtn.textContent === 'SIGN UP';
-
-  if (isSignUp) {
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(userCredential => {
-        const user = userCredential.user;
-        console.log('Registration successful:', user);
-        toggleModal();
-      })
-      .catch(error => {
-        console.error('Registration error: Please try again', error);
-      });
-  } else {
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(userCredential => {
-        const user = userCredential.user;
-        console.log('Authorization successful:', user);
-        toggleModal();
-      })
-      .catch(error => {
-        console.error('Authorization error: Please try again', error);
-      });
-  }
+  signUpLink.addEventListener('click', toggleAuthMode);
+  signInLink.addEventListener('click', toggleAuthMode);
+  authForm.addEventListener('submit', handleAuthFormSubmit);
 });
 
 // const email = "user@example.com";
