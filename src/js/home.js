@@ -1,18 +1,26 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
+import { getTopBooks } from './api';
 const container = document.querySelector('.js-home-markup');
 
 const HOME_REQ = 'https://books-backend.p.goit.global/books/top-books';
 
-axios
-  .get(`${HOME_REQ}`)
-  .then(({ data }) => {
-    console.log(data);
+getTopBooks()
+  .then((data) => {
     return container.insertAdjacentHTML('beforeend', createMarkupHome(data));
   })
-  .catch(err =>
+  .catch(() =>
     Notiflix.Notify.failure('Failed to load books. Please try again later.')
   );
+// axios
+//   .get(`${HOME_REQ}`)
+//   .then(({ data }) => {
+//     console.log(data);
+//     return container.insertAdjacentHTML('beforeend', createMarkupHome(data));
+//   })
+//   .catch(err =>
+//     Notiflix.Notify.failure('Failed to load books. Please try again later.')
+//   );
 
 function createMarkupHome(data) {
   const markup = data
