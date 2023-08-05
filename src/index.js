@@ -1,6 +1,9 @@
-
-import {getAllCategories, getTopBooks, getSeparateCategories, getBookInfo} from "./js/api"
-
+import {
+  getAllCategories,
+  getTopBooks,
+  getSeparateCategories,
+  getBookInfo,
+} from './js/api';
 
 import './js/go-top';
-
+import './js/allCategories-render';
