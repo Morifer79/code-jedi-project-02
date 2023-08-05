@@ -21,10 +21,12 @@
     "axios": "^1.4.0",
     "basiclightbox": "^5.0.4",
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.6"
+    "notiflix": "^3.2.6",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^6.0.3",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
