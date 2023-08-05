@@ -3,4 +3,5 @@ import {getAllCategories, getTopBooks, getSeparateCategories, getBookInfo} from 
 
 
 import './js/go-top';
+import './js/start.js';
 
