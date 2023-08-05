@@ -1,6 +1,5 @@
 
-import {getAllCategories, getTopBooks, getSeparateCategories, getBookInfo} from "./js/api"
-
-
-import './js/go-top';
-
+import './js/api.js';
+import './js/go-top.js';
+import './js/start.js';
+import './js/category.js';
