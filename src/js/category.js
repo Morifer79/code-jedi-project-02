@@ -32,13 +32,10 @@ function loadBooksByCategory(category) {
 
   getSeparateCategories(category)
     .then(response => {
-      console.log(`Books loaded successfully in category "${category}".`);
-      const books = response.books;
-
-      if (books.length > 0) {
-        console.table(books); 
-        const booksMarkup = books.map(book => createMarkup(book)).join("");
-        booksContainer.innerHTML = booksMarkup;
+      if (response.length > 0) {
+        console.table(response); 
+        const booksMarkup = response.map(book => createMarkup(book)).join("");
+       return booksContainer.innerHTML = booksMarkup;
       } else {
         booksContainer.innerHTML = `<p>No found books in category "${category}".</p>`;
       }
@@ -57,10 +54,10 @@ function createMarkup(book) {
     </div>
   `;
 }
-console.log(categoryLinks);
-console.dir(categoryLinks);
-console.table(categoryLinks);
+// console.log(categoryLinks);
+// console.dir(categoryLinks);
+// console.table(categoryLinks);
 
-console.log(booksMarkup);
-console.dir(booksMarkup);
-console.table(booksMarkup);
+// console.log(booksMarkup);
+// console.dir(booksMarkup);
+// console.table(booksMarkup);
