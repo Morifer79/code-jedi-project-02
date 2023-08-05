@@ -6,7 +6,7 @@ const separateCategories = "https://books-backend.p.goit.global/books/category?c
 const bookInfo = "https://books-backend.p.goit.global/books/";
 
 export function getAllCategories() {
-   responce = axios.get(categoriesAll).then(response => {
+		return response = axios.get(categoriesAll).then(response => {
        return response.data;
    })
 };
