@@ -2,26 +2,82 @@
      padding: 0 20px;
 }
 
-.category-title{
-color: #111;
-font-family: var(--font-family);
-font-size: 32px;
-font-style: normal;
-line-height: 38px; /* 118.75% */
-letter-spacing: -1.28px; 
-padding: 40px 0 40px 20px;
-}
-
-.category-title-color{
-color: #4F2EE8;
-}
-
-.category-link{
-    color: rgba(17, 17, 17, 0.60);
-font-family: var(--font-family);
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 18px; /* 112.5% */
-letter-spacing: -0.32px;
-}
+.categories {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .categories .category-link {
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .categories .category-link:hover {
+    color: #4F2EE8;
+  }
+  
+  .categories .category-link.active {
+    font-weight: bold;
+  }
+  
+  
+  .books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .book-card {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .book-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .book-title {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .book-author {
+    margin-top: 5px;
+    color: #333;
+  }
+  
+  .book-description {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .book-buy-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #4F2EE8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .book-buy-link:hover {
+    color: #4F2EE8;
+  }
+  
+  .category-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #111;
+  }

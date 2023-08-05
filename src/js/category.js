@@ -1,66 +1,55 @@
-import axios from 'axios';
+import { getSeparateCategories } from './api'; 
 
-const categoriesAll = "https://books-backend.p.goit.global/books/category-list";
+const categoryLinks = document.querySelectorAll(".category-link");
+const booksContainer = document.querySelector(".books");
 
-document.addEventListener('DOMContentLoaded', function () {
-  const libraryLinks = document.querySelectorAll('.library-link');
-  const existingCategoryLinks = document.querySelectorAll('.category-link');
 
-  libraryLinks.forEach((link) => {
-    link.addEventListener('click', async (event) => {
-      event.preventDefault();
-      const selectedCategory = link.dataset.category;
-      try {
-        const response = await axios.get(`https://books-backend.p.goit.global/books/category?category=${selectedCategory}`);
-        renderContent(selectedCategory, response.data);
-      } catch (error) {
-        console.error('Error fetching books:', error);
-        renderError();
-      }
-    });
-  });
-
-  existingCategoryLinks.forEach((link) => {
-    link.addEventListener('click', async (event) => {
-      event.preventDefault();
-      const selectedCategory = link.dataset.category;
-      try {
-        const response = await axios.get(`https://books-backend.p.goit.global/books/category?category=${selectedCategory}`);
-        renderContent(selectedCategory, response.data);
-      } catch (error) {
-        console.error('Error fetching books:', error);
-        renderError();
-      }
-    });
+categoryLinks.forEach(link => {
+  link.addEventListener("click", function(event) {
+    event.preventDefault();
+    const category = link.getAttribute("data-category");
+    loadBooksByCategory(category);
   });
 });
 
-function renderContent(category, books) {
-  const contentContainer = document.querySelector('.content-container');
+function loadBooksByCategory(category) {
+  const categoryNameElement = document.querySelector(".category-title");
+  const categoryName = ` ${category} `;
+  categoryNameElement.textContent = categoryName;
 
-  let booksMarkup = '';
-  if (books.length === 0) {
-    booksMarkup = '<p>No books found in this category.</p>';
-  } else {
-    books.forEach(book => {
-      booksMarkup += createMarkup(book);
-    });
+  const words = categoryName.split(" ");
+  const lastWord = words[words.length - 2]; 
+
+  const lastWordElement = document.createElement("span");
+  lastWordElement.textContent = lastWord;
+  lastWordElement.style.color = "#4F2EE8"; 
+
+  categoryNameElement.innerHTML = categoryName.replace(
+    lastWord,
+    lastWordElement.outerHTML
+  );
+    getSeparateCategories(category)
+      .then(response => {
+        const books = response.books; 
+        if (books.length > 0) {
+          const booksMarkup = books.map(book => createMarkup(book)).join("");
+          booksContainer.innerHTML = booksMarkup;
+        } else {
+          booksContainer.innerHTML = `<p>No found books in category "${category}".</p>`;
+        }
+      })
+      .catch(error => {
+        console.error(`Error loading books in category "${category}":`, error);
+      });
+  }
+  
+  function createMarkup(book) {
+    return `
+      <div class="book-card">
+        <img src="${book.book_image}" alt="${book.title}" class="book-image">
+        <h3 class="book-title">${book.title}</h3>
+        <p class="book-author">Author: ${book.author}</p>
+     </div>
+    `;
   }
 
-  const categoryMarkup = `<h2>${category}</h2>`;
-  contentContainer.innerHTML = categoryMarkup + booksMarkup;
-}
-
-function createMarkup(book) {
-  return `
-    <div class="book">
-      <img src="${book.book_image}" alt="${book.title}" />
-      <p>${book.title} by ${book.author}</p>
-    </div>
-  `;
-}
-
-function renderError() {
-  const contentContainer = document.querySelector('.content-container');
-  contentContainer.innerHTML = '<p>An error occurred while fetching books.</p>';
-}
