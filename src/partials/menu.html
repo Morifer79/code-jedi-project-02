@@ -1,4 +1,4 @@
-<div class="backdrop-menu " data-modal>
+<div class="backdrop-menu is-hidden" data-modal-menu>
 
     <button type="button" class="singlUpBtn btnMenu">
         <span class="menu-btn-user-text">Log out</span>
@@ -21,12 +21,20 @@
     <ul class="header-list-mob-menu js-flax ">
         <!-- is-hidden -->
         <li class="header-link-home-menu">
-            <a class="header-page-home" href="#home">HOME</a>
+            <a class="header-page-home-menu" href="#home">HOME</a>
         </li>
-        <li class="header-link-shoping">
-            <a class="header-page-shop js-shopping-cart-btn" href="#shopping-list">SHOPPING LIST</a>
+        <li class="header-link-shoping-menu">
+            <a class="header-page-shop-menu js-shopping-cart-btn" href="#shopping-list">SHOPPING LIST</a>
             <span class="iconify" data-icon="uil:shopping-bag"></span>
         </li>
     </ul>
+
+    <button type="button" class=" btn-user-menu" data-modal-open>
+
+        <span class="btn-user-text-menu">Log out</span>
+        <svg width="24" height="24">
+            <use href="./images/sprite.svg#arrow-right" class="test"></use>
+        </svg>
+    </button>
 
 </div>
