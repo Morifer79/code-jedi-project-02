@@ -1,0 +1,148 @@
+.js-flax {
+    display: flex;
+    align-items: center;
+}
+
+.header{
+    height: 64px;
+    border: 1px solid black;
+    border-radius: 0px 0px 8px 8px;
+    box-sizing: border-box;
+    padding: 18px 0 18px 0;
+}
+
+.hedear-nav{
+    /* position: relative; */
+}
+
+.mobe-menu-open{
+    width: 28px;
+    height: 28px;
+    background-color: var(--light-bg);
+    border: none;
+    background-color: transparent;
+    padding: 0;
+}
+
+.mobe-menu-svg{
+stroke: var(--black);
+}
+
+.header-container{
+    height: auto;
+    /* max-width: 375px; */
+        width: 100%;
+        justify-content: space-between;
+        /* gap: 144px */
+
+}
+
+.header-list{
+/* position: absolute; */
+display: none;
+}
+
+.container-rith-btn{
+    /* position: relative; */
+    gap: 14px;
+    /* margin: 20px 0 20px 0; */
+}
+
+.btn-user{
+    /* position: absolute; */
+    display: none;
+}
+.img-switcher{
+    width: 40px;
+    height: 24px;
+    
+   
+}
+
+@media screen and (min-width: 768px){
+
+    .header{
+        height: 72px;
+        padding-top: 14px;
+        padding-bottom: 13px;
+    }
+    .header-list{
+        display: flex;
+gap: 16px;
+    }
+
+    .btn-user{
+        /* display: block; */
+        background-color: inherit;
+        width: 184px;
+        height: 45px;
+        border-radius: 18px 18px 18px 18px;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:90px
+    }
+
+    .btn-user-text{
+        line-height: 1.28;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: -0.0734em;
+    }
+
+    .mobe-menu-open{
+        display: none;
+    }
+.header-link-home{
+    width: 72px;
+    height: 34px;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.header-page-home{
+    font-size: 14px;
+    line-height: 1.28;
+}
+.header-link-shoping{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    }
+.iconify{
+    width: 20px;
+     height: 20px;
+}
+
+.hedear-nav{
+    gap: 40px;
+}
+.header-page-shop{
+    line-height: 1.28;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.0734em;
+}
+
+.container-rith-btn{
+    gap: 24px;
+}
+
+.header-container{
+    /* gap: 101px; */
+}
+    
+}
+
+@media screen and (min-width: 1400px) {
+
+    .hedear-nav {
+            gap: 76px;
+        }
+
+    .header-list {
+        gap: 24px;
+    }
+}
