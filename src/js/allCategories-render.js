@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const categoriesList = document.querySelector('.allcategories-list-js');
+const categoriesList = document.querySelector('.category-link');
 
 const URL = {
   all: 'https://books-backend.p.goit.global/books/category-list',
@@ -19,7 +19,7 @@ function categoriesListMarkup(data) {
     .join('');
 }
 
-export default async function getBookAPI(type, value = '') {
+export async function getBookAPI(type, value = '') {
   const response = await axios.get(`${URL[type]}${value}`);
   return response.data;
 }
@@ -41,19 +41,6 @@ async function renderCategoriesList() {
   } catch (error) {
     console.log(error);
   }
-}
-
-function addListenersToAllBtns() {
-  categoriesList.addEventListener('click', e => {
-    if (e.target.nodeName === 'BUTTON') {
-      const activeCategory = document.querySelector(
-        '.allcategories-list__btn-js.is-active'
-      );
-
-      activeCategory.classList.remove('is-active');
-      e.target.classList.add('is-active');
-    }
-  });
 }
 
 renderCategoriesList();
