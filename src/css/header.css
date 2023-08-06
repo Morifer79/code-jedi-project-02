@@ -6,9 +6,9 @@
 .header{
     height: 64px;
     border: 1px solid black;
-    border-radius: 0px 0px 8px 8px;
+    border-radius: 0 0 8px 8px;
     box-sizing: border-box;
-    padding: 18px 0 18px 0;
+    padding: 18px 0;
 }
 
 .hedear-nav{
@@ -72,12 +72,12 @@ gap: 16px;
     }
 
     .btn-user{
-        /* display: block; */
+        
         background-color: inherit;
         width: 184px;
         height: 45px;
-        border-radius: 18px 18px 18px 18px;
-        padding: 0px;
+        border-radius: 18px ;
+        padding: 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -100,16 +100,28 @@ gap: 16px;
     display: flex;
         align-items: center;
         justify-content: center;
+        background-color: var(--yellow);
+            border-radius: 36px;
 }
 
 .header-page-home{
+   
     font-size: 14px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     line-height: 1.28;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+   
 }
 .header-link-shoping{
+    padding: 7px 16px;
+        justify-content: center;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
+    background-color: inherit;
+        border-radius: 36px;
+   
     }
 .iconify{
     width: 20px;
@@ -123,7 +135,8 @@ gap: 16px;
     line-height: 1.28;
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: -0.0734em;
+    letter-spacing: -0.56px;
+        text-transform: uppercase;
 }
 
 .container-rith-btn{
