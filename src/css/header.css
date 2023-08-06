@@ -9,6 +9,9 @@
     border-radius: 0 0 8px 8px;
     box-sizing: border-box;
     padding: 18px 0;
+    z-index: 4;
+    background-color: var(--light-bg);
+        position: absolute;
 }
 
 .hedear-nav{
@@ -26,8 +29,12 @@
 
 .mobe-menu-svg{
 stroke: var(--black);
+display: block;
 }
 
+.close-icon{
+    display: none;
+}
 .header-container{
     height: auto;
     /* max-width: 375px; */
