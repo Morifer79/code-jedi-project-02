@@ -1,15 +1,29 @@
-<!-- <div class="backdrop is-hidden" data-modal>
+<button type="button" class="modal-close" data-modal-open>open</button>
+
+<div class="backdrop is-hidden" data-modal>
   <div class="modal">
     <button type="button" class="modal-close" data-modal-close>
       <svg class="close-icon">
         <use href="./images/sprite.svg#x-close"></use>
       </svg>
     </button>
-    <form class="authorization-form" action="">
-      <input class="authorization-input" type="text" placeholder="NAME" />
+    <form class="authorization-form" id="authForm" action="">
+      <input
+        class="authorization-input"
+        type="text"
+        placeholder="NAME"
+        maxlength="32"
+        required
+      />
 
       <div class="input-email-wrapper">
-        <input class="authorization-input" type="email" placeholder="EMAIL" />
+        <input
+          class="authorization-input"
+          id="emailInput"
+          type="email"
+          placeholder="EMAIL"
+          required
+        />
         <svg class="svg-email">
           <use href="./images/sprite.svg#mail"></use>
         </svg>
@@ -17,14 +31,16 @@
       <div class="input-password-wrapper">
         <input
           class="authorization-input"
+          id="passwordInput"
           type="password"
           placeholder="PASSWORD"
+          required
         />
         <svg class="svg-password">
           <use href="./images/sprite.svg#lock"></use>
         </svg>
       </div>
-      <button class="signup-btn">SIGN UP</button>
+      <button class="signup-btn" id="signupBtn">SIGN UP</button>
       <div class="link-wrapper">
         <a class="sign-link sign-up-link" href="">SIGN UP</a>
         <a class="sign-link sign-in-link" href="">SIGN IN</a>
