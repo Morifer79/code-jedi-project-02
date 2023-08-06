@@ -2,12 +2,22 @@ import { getSeparateCategories } from './api';
 
 const categoryLinks = document.querySelectorAll(".category-link");
 const booksContainer = document.querySelector(".books");
+const seeMoreButtons = document.querySelectorAll(".js-seemore-btn");
+
 
 categoryLinks.forEach(link => {
   link.addEventListener("click", function(event) {
     event.preventDefault();
     const category = link.getAttribute("data-category");
     loadBooksByCategory(category);
+  });
+});
+
+seeMoreButtons.forEach(button => {
+  button.addEventListener("click", function(event) {
+    event.preventDefault();
+  const category = button.getAttribute("data-category");
+  loadBooksByCategory(category);
   });
 });
 
