@@ -54,10 +54,3 @@ function createMarkup(book) {
     </div>
   `;
 }
-// console.log(categoryLinks);
-// console.dir(categoryLinks);
-// console.table(categoryLinks);
-
-// console.log(booksMarkup);
-// console.dir(booksMarkup);
-// console.table(booksMarkup);
