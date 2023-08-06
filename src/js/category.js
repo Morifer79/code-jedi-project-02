@@ -16,7 +16,7 @@ categoryLinks.forEach(link => {
 seeMoreButtons.forEach(button => {
   button.addEventListener("click", function(event) {
     event.preventDefault();
-  const category = button.getAttribute("data-category");
+  const category = button.getAttribute("name");
   loadBooksByCategory(category);
   });
 });
@@ -59,7 +59,7 @@ function createMarkup(book) {
   return `
     <div class="book-card">
       <img src="${book.book_image}" alt="${book.title}" class="book-image">
-      <h3 class="book-title">${book.title}</h3>
+      <h3 class="home-card-title">${book.title}</h3>
       <p class="book-author">Author: ${book.author}</p>
     </div>
   `;
