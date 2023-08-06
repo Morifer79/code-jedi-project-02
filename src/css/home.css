@@ -1,9 +1,6 @@
 .hero-title {
   color: var(--black);
-  font-family: var(--font-family);
   font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 1.19;
   letter-spacing: -1.28px;
   margin-bottom: 40px;
@@ -18,10 +15,8 @@
   flex-direction: column;
 }
 .home-category-title {
-  color: #b4afaf;
-  font-family: var(--font-family);
+  color: var(--grey);
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: 1.29;
   letter-spacing: 0.42px;
@@ -31,7 +26,6 @@
 .home-card {
   width: 335px;
   margin-bottom: 20px;
-  box-sizing: border-box;
   display: none;
 }
 .home-card:first-child {
@@ -46,10 +40,7 @@
 }
 .home-card-title {
   color: var(--black);
-  font-family: var(--font-family);
   font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 1.13;
   letter-spacing: -0.64px;
   text-transform: uppercase;
@@ -59,11 +50,10 @@
 .home-category-btn:is(:hover, :focus),
 .hero-title:is(:hover, :focus),
 .home-card:is(:hover, :focus) .home-card-title {
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .home-card-author {
-  color: #b4afaf;
-  font-family: var(--font-family);
+  color: var(--grey);
   font-size: 12px;
   font-style: italic;
   font-weight: 400;
@@ -75,11 +65,9 @@
   border-radius: 40px;
   border: 2px solid var(--violet);
   padding: 14px 28px;
-  color: #111;
+  color: var(--black);
   font-family: var(--font-family);
   font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
   line-height: 1.29;
   letter-spacing: -0.14px;
   text-transform: uppercase;
@@ -102,7 +90,7 @@
   .home-card {
     display: flex;
     flex-direction: column;
-    flex-basis: calc((100% - 50)/3);
+    flex-basis: calc((100% - 50) / 3);
   }
   .home-card:nth-child(n + 4) {
     display: none;
@@ -125,7 +113,7 @@
     margin: 0;
     margin-left: auto;
   }
-  .home-card:nth-child(n)  {
+  .home-card:nth-child(n) {
     display: block;
   }
   .home-category-cards {
@@ -134,7 +122,7 @@
     gap: 24px;
   }
   .home-card {
-    flex-basis: calc((100% - 100)/5);
+    flex-basis: calc((100% - 100) / 5);
   }
   .home-card img {
     width: 180px;
