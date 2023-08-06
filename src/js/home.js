@@ -1,15 +1,17 @@
 import Notiflix from 'notiflix';
 import { getTopBooks } from './api';
 const container = document.querySelector('.js-home-markup');
+const title = `<h1 class="hero-title">
+  Best Sellers <span class="hero-title-accent">Books</span>
+</h1>`;
 
 getTopBooks()
-  .then((data) => {
-    return container.insertAdjacentHTML('beforeend', createMarkupHome(data));
+  .then(data => {
+    return container.innerHTML = title+createMarkupHome(data);
   })
   .catch(() =>
     Notiflix.Notify.failure('Failed to load books. Please try again later.')
   );
-
 function createMarkupHome(data) {
   const markup = data
     .map(
