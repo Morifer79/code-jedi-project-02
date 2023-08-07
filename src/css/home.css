@@ -36,8 +36,6 @@
   border-radius: 8px;
   width: 335px;
   height: 485px;
-  
-  
 }
 .home-card-title {
   color: var(--black);
@@ -77,9 +75,6 @@
   margin-bottom: 40px;
   transition: text-shadow var(--transition);
 }
-
-
-
 @media screen and (min-width: 768px) {
   .hero-title {
     font-size: 48px;
@@ -161,5 +156,12 @@
   .book-card:is(:hover, :focus) .home-card-overlay {
     transform: translateY(0%);
   }
-  
+ 
+}
+.support-wrap {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
 }

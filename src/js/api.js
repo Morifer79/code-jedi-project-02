@@ -8,7 +8,7 @@ const bookInfo = "https://books-backend.p.goit.global/books/";
 export function getAllCategories() {
 		return response = axios.get(categoriesAll).then(response => {
        return response.data;
-   })
+   });
 };
 
 export function getTopBooks() {
