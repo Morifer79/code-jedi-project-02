@@ -43,7 +43,8 @@
   line-height: 1.13;
   letter-spacing: -0.64px;
   text-transform: uppercase;
-  margin:14px 0 4px;
+  margin-bottom: 4px;
+  margin-top: 14px;
   transition: text-shadow var(--transition);
 }
 .home-category-btn:is(:hover, :focus),
@@ -73,15 +74,6 @@
   align-self: flex-end;
   margin-bottom: 40px;
   transition: text-shadow var(--transition);
-}
-.home-card-overlay {
-  display: none;
-}
-/* .home-container.container {
-  padding: 0;
-} */
-.support-wrap.container {
-  padding: 0 20px;
 }
 @media screen and (min-width: 768px) {
   .hero-title {
@@ -135,10 +127,10 @@
     width: 180px;
     height: 256px;
   }
-.home-card-wrap {
+
+  .home-card-wrap {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
   }
   .home-card-overlay {
     display: block;
@@ -154,15 +146,17 @@
     transform: translateY(100%);
     transition: transform var(--transition);
     color: var(--black);
-font-size: 13px;
-font-weight: 500;
-line-height: 1.29;
-letter-spacing: -0.56px;
-text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.29;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
   }
-
-  .home-card:is(:hover, :focus) .home-card-overlay {
+  
+  .book-card:is(:hover, :focus) .home-card-overlay {
     transform: translateY(0%);
+  }
+ 
 }
 .support-wrap {
   display: flex;
