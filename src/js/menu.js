@@ -5,21 +5,16 @@ const refs = {
     
   };
 
-  refs.openModalBtnMenu.addEventListener('click', toggleModalMenu);
-  refs.closeModalBtnMenu.addEventListener('click', toggleModalMenu);
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
 
-function toggleModalMenu() {
- 
-      
-      refs.modalMenu.classList.toggle('is-hidden');
-  if (!refs.modalMenu.classList.contains('is-hidden')) {
-    refs.openModalBtnMenu.style.display = "none";
-   refs.closeModalBtnMenu.style.display="block"
-    document.body.style.overflow = 'hidden';
-  } else {
-    refs.openModalBtnMenu.style.display = "block";
-    refs.closeModalBtnMenu.style.display="none"
-    document.body.style.overflow = '';
+    function toggleModal() {
+      // console.log(refs.modal.classList.contains('is-hidden'));
+    // refs.modal.classList.toggle('is-hidden');
+    if (refs.modal.classList.contains('is-hidden')) {
+      document.body.style.overflow = '';
+    } else {
+      document.body.style.overflow = 'is-hidden';
     }
     
 };
