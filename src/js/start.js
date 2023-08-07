@@ -1,3 +1,5 @@
+import Notiflix from "notiflix";
+
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
@@ -6,9 +8,9 @@ const refs = {
   signUpLink: document.querySelector('.sign-up-link'),
   signInLink: document.querySelector('.sign-in-link'),
   signUpBtn: document.querySelector('.signup-btn'),
-  // userIcon: document.querySelector('.js-user-icon'),
-  // cartIcon: document.querySelector('.js-shopping-cart-btn'),
-  //authUserIcon: document.querySelector('.js-authuser-icon'),
+  userIcon: document.querySelector('.js-user-icon'),
+  cartIcon: document.querySelector('.js-shopping-cart-btn'),
+  authUserIcon: document.querySelector('.js-authuser-icon'),
 };
 
 refs.openModalBtn.addEventListener('click', toggleModal);
@@ -80,8 +82,8 @@ function handleAuthFormSubmit(e) {
   }
 }
 
-// function changeIcon () {
-//       refs.authUserIcon.style.display = 'block';
-//       refs.cartIcon.style.display = 'block';
-//       refs.userIcon.style.display = 'none';
-// }
+function changeIcon () {
+      refs.authUserIcon.style.display = 'block';
+      refs.cartIcon.style.display = 'block';
+      refs.userIcon.style.display = 'none';
+}
