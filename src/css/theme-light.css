@@ -1,0 +1,13 @@
+html,
+body {
+	background-color: var(--light-bg);
+	color: var(--black);
+}
+
+.js-img-switcher[data-theme="dark"] {
+	display: block;
+}
+
+.js-img-switcher[data-theme="light"] {
+	display: none;
+}
