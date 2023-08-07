@@ -4,7 +4,7 @@
   pointer-events: none;
 }
 
-.backdrop {
+.backdrop-start {
   z-index: 3;
   position: fixed;
   top: 0;
@@ -18,7 +18,7 @@
   transition: opacity var(--transition), visibility var(--transition);
 }
 
-.backdrop.is-hidden .modal {
+.backdrop-start.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.8);
 }
 
@@ -177,8 +177,6 @@
   .modal-close {
     width: 28px;
     height: 28px;
-    top: 24px;
-    right: 24px;
   }
 
   .authorization-input {

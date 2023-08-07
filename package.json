@@ -21,7 +21,8 @@
     "axios": "^1.4.0",
     "basiclightbox": "^5.0.4",
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.6"
+    "notiflix": "^3.2.6",
+    "swiper": "^10.1.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
@@ -29,6 +30,7 @@
     "console-browserify": "^1.2.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
+    "parcel-transformer-hbs": "^1.0.4",
     "posthtml-include": "^1.7.4",
     "process": "^0.11.10"
   },

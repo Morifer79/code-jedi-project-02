@@ -1,5 +1,5 @@
-import renderModal from './templates/pop-up.hbs';
-import {fetchBooks} from './js/api.js'
+import renderModal from '../templates/pop-up.hbs';
+import {getBookInfo} from './api.js';
 
 export class Spiner {
     bookSpinerEl = document.querySelector('.spiner-js');
@@ -30,12 +30,12 @@ const currentStorage = JSON.parse(localStorage.getItem(BOOKS_DATA_KEY));
 const spiner = new Spiner();
 
 const imgSrcs = {
-    amazonSrcX1: require('./images/modal/image-1@1x.png'),
-    amazonSrcX2: require('./images/modal/image-1@2x.png'),
-    appleBooksSrcX1: require('./images/modal/image-2@1x.png'),
-    appleBooksSrcX2: require('./images/modal/image-2@2x.png'),
-    barnesAndNobleSrcX1: require('./images/modal/image-3@1x.png'),
-    barnesAndNobleSrcX2: require('./images/modal/image-3@2x.png'),
+    amazonSrcX1: require('../images/modal/image-1@1x.png'),
+    amazonSrcX2: require('../images/modal/image-1@2x.png'),
+    appleBooksSrcX1: require('../images/modal/image-2@1x.png'),
+    appleBooksSrcX2: require('../images/modal/image-2@2x.png'),
+    barnesAndNobleSrcX1: require('../images/modal/image-3@1x.png'),
+    barnesAndNobleSrcX2: require('../images/modal/image-3@2x.png'),
 };
 
 if (currentStorage) {
@@ -47,7 +47,7 @@ if (currentStorage) {
   export async function handleModalWindow(bookId) {
     try {
 
-        const bookData = await fetchBooks.getBookById(bookId);
+				const bookData = getBookInfo(bookId);
         const IsUserLogged = JSON.parse(localStorage.getItem(USER_DATA_KEY));
 
         const amazonUrl = bookData.buy_links.find(
