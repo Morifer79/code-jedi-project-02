@@ -46,7 +46,7 @@ function loadBooksByCategory(category) {
       if (response.length > 0) {
         console.table(response); 
         const booksMarkup = 
-          `<ul class="home-category-cards category-books">
+          `<ul class="home-category-cards category-books home-container.container">
             ${response.map(book => createMarkup(book)).join('')}
           </ul>`
         ;
