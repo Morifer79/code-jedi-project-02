@@ -133,6 +133,7 @@
 .home-card-wrap {
     position: relative;
     overflow: hidden;
+    border-radius: 8px;
   }
   .home-card-overlay {
     display: block;
