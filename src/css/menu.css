@@ -50,7 +50,14 @@ color: var(--white);
     width: 37px;
     height: 37px;
     fill:#FFF;
-    z-index: 3;
+   
+    display: block;
+}
+
+.menu-authuser-icon{
+    width: 37px;
+        height: 37px;
+    display: none;
 }
 
 .menu-btn-user-name{
@@ -58,6 +65,8 @@ color: var(--white);
 }
 
 .btnUserMenu{
+    top:84px;
+
     width: 133px;
     height: 37px;
     gap: 9px;
