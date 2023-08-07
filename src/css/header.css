@@ -1,170 +1,145 @@
 .js-flax {
+  display: flex;
+  align-items: center;
+}
+
+.header {
+  height: 64px;
+  border: 1px solid var(--black);
+  border-radius: 0 0 8px 8px;
+  padding: 18px 0;
+	margin-bottom: 40px;
+}
+
+.mobe-menu-open {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.mobe-menu-svg {
+  stroke: var(--black);
+}
+
+.mobe-menu-close {
+  display: none;
+}
+
+.header-container {
+  height: auto;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.header-list {
+  display: none;
+}
+
+.container-right-btn {
+  gap: 14px;
+}
+
+.btn-user {
+  display: none;
+}
+
+.img-switcher {
+  width: 40px;
+  height: 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    height: 72px;
+    padding-top: 14px;
+    padding-bottom: 13px;
+  }
+  .header-list {
+    display: flex;
+    gap: 16px;
+  }
+
+  .btn-user {
+    background-color: inherit;
+    width: 184px;
+    height: 45px;
+    border-radius: 18px;
+    padding: 0;
     display: flex;
     align-items: center;
-}
+    justify-content: center;
+    gap: 90px;
+  }
 
-.header{
-    height: 64px;
-    border: 1px solid black;
-    border-radius: 0 0 8px 8px;
-    box-sizing: border-box;
-    padding: 18px 0;
-    z-index: 4;
-    background-color: var(--light-bg);
-        position: absolute;
-}
+  .btn-user-text {
+    line-height: 1.28;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.0734em;
+  }
 
-.hedear-nav{
-    /* position: relative; */
-}
-
-.mobe-menu-open{
-    width: 28px;
-    height: 28px;
-    background-color: var(--light-bg);
-    border: none;
-    background-color: transparent;
-    padding: 0;
-}
-
-.mobe-menu-svg{
-stroke: var(--black);
-display: block;
-}
-
-.close-icon{
+  .mobe-menu-open {
     display: none;
-}
-.header-container{
-    height: auto;
-    /* max-width: 375px; */
-        width: 100%;
-        justify-content: space-between;
-        /* gap: 144px */
-
-}
-
-.header-list{
-/* position: absolute; */
-display: none;
-}
-
-.container-rith-btn{
-    /* position: relative; */
-    gap: 14px;
-    /* margin: 20px 0 20px 0; */
-}
-
-.btn-user{
-    /* position: absolute; */
-    display: none;
-}
-.img-switcher{
-    width: 40px;
-    height: 24px;
-    
-   
-}
-
-@media screen and (min-width: 768px){
-
-    .header{
-        height: 72px;
-        padding-top: 14px;
-        padding-bottom: 13px;
-    }
-    .header-list{
-        display: flex;
-gap: 16px;
-    }
-
-    .btn-user{
-        
-        background-color: inherit;
-        width: 184px;
-        height: 45px;
-        border-radius: 18px ;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap:90px
-    }
-
-    .btn-user-text{
-        line-height: 1.28;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: -0.0734em;
-    }
-
-    .mobe-menu-open{
-        display: none;
-    }
-.header-link-home{
+  }
+  .header-link-home {
     width: 72px;
     height: 34px;
     display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--yellow);
-            border-radius: 36px;
-}
+    align-items: center;
+    justify-content: center;
+    background-color: var(--yellow);
+    border-radius: 36px;
+  }
 
-.header-page-home{
-   
+  .header-page-home {
     font-size: 14px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     line-height: 1.28;
     letter-spacing: -0.56px;
     text-transform: uppercase;
-   
-}
+  }
 
-
-.header-link-shoping{
+  .header-link-shoping {
     padding: 7px 16px;
-        justify-content: center;
+    justify-content: center;
     display: flex;
     align-items: center;
     gap: 8px;
     background-color: inherit;
-        border-radius: 36px;
-   
-    }
-.iconify{
-    width: 20px;
-     height: 20px;
-}
+    border-radius: 36px;
+		display: none;
+  }
 
-.hedear-nav{
+  .iconify {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hedear-nav {
     gap: 40px;
-}
-.header-page-shop{
+  }
+
+  .header-page-shop {
     line-height: 1.28;
     font-size: 14px;
     font-weight: 500;
     letter-spacing: -0.56px;
-        text-transform: uppercase;
-}
+    text-transform: uppercase;
+  }
 
-.container-rith-btn{
+  .container-rith-btn {
     gap: 24px;
-}
-
-.header-container{
-    /* gap: 101px; */
-}
-    
+  }
 }
 
 @media screen and (min-width: 1400px) {
+  .hedear-nav {
+    gap: 76px;
+  }
 
-    .hedear-nav {
-            gap: 76px;
-        }
-
-    .header-list {
-        gap: 24px;
-    }
+  .header-list {
+    gap: 24px;
+  }
 }
