@@ -1,27 +1,18 @@
 .js-flax {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .header{
-    height: 64px;
-    border: 1px solid black;
-    border-radius: 0 0 8px 8px;
-    box-sizing: border-box;
-    padding: 18px 0;
-    z-index: 4;
-    background-color: var(--light-bg);
-        position: absolute;
-}
-
-.hedear-nav{
-    /* position: relative; */
-}
+	height: 64px;
+	border: 1px solid var(--black);
+	border-radius: 0 0 8px 8px;
+	padding: 18px 0;
+	}
 
 .mobe-menu-open{
     width: 28px;
     height: 28px;
-    background-color: var(--light-bg);
     border: none;
     background-color: transparent;
     padding: 0;
@@ -30,7 +21,6 @@
 
 .mobe-menu-svg{
 stroke: var(--black);
-display: block;
 }
 
 .mobe-menu-close{
@@ -48,26 +38,19 @@ display: block;
 } */
 .header-container{
     height: auto;
-    /* max-width: 375px; */
         width: 100%;
         justify-content: space-between;
-        /* gap: 144px */
-
 }
 
 .header-list{
-/* position: absolute; */
 display: none;
 }
 
-.container-rith-btn{
-    /* position: relative; */
+.container-right-btn{
     gap: 14px;
-    /* margin: 20px 0 20px 0; */
 }
 
 .btn-user{
-    /* position: absolute; */
     display: none;
 }
 .img-switcher-lith{
