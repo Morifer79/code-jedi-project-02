@@ -18,14 +18,14 @@ refs.signUpLink.addEventListener('click', toggleAuthMode);
 refs.signInLink.addEventListener('click', toggleAuthMode);
 refs.authForm.addEventListener('submit', handleAuthFormSubmit);
 
-function toggleModal() {
-  refs.modal.classList.toggle('is-hidden');
-  if (!refs.modal.classList.contains('is-hidden')) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
-}
+// function toggleModal() {
+//   refs.modal.classList.toggle('is-hidden');
+//   if (!refs.modal.classList.contains('is-hidden')) {
+//     document.body.style.overflow = 'hidden';
+//   } else {
+//     document.body.style.overflow = '';
+//   }
+// }
 
 function toggleAuthMode(event) {
   event.preventDefault();

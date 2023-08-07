@@ -1,6 +1,5 @@
 import Notiflix from 'notiflix';
 import { getTopBooks } from './api';
-
 export const container = document.querySelector('.js-home-markup');
 
 getTopBooks()
@@ -20,13 +19,13 @@ function createMarkupHome(data) {
       ${data.books
         .map(
           book => `<li class="home-card" id="${book._id}">
-        <div class="home-card-wrap">
-        <img src="${book.book_image}" alt="${book.title} loading="lazy" width="335">
-        <p class="home-card-overlay">quick view</p>
-        </div>
-        <h2 class="home-card-title">${book.title}</h2>
-        <p class="home-card-author">${book.author}</p>
-      </li>`
+          <div class="home-card-wrap">
+          <img src="${book.book_image}" alt="${book.title} loading="lazy" width="335">
+          <p class="home-card-overlay">quick view</p>
+          </div>
+          <h2 class="home-card-title">${book.title}</h2>
+          <p class="home-card-author">${book.author}</p>
+        </li>`
         )
         .join('')}
       </ul>
@@ -36,3 +35,4 @@ function createMarkupHome(data) {
     .join('');
   return markup;
 }
+console.log();
