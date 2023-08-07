@@ -1,11 +1,11 @@
-const elBtnUser = document.querySelector(".btn-user")
-let userName="User"
-elBtnUser.addEventListener("click", handleClick)
+const elBtnUser = document.querySelector(".btn-user");
+import {userName} from './start.js';
+// let userName="User"
+elBtnUser.addEventListener("click", handleClick);
 
-console.log("Hello");
-
-function handleClick() {
-    console.log(elBtnUser);
+export function handleClick() {
+	if (userName??undefined) {
+		userName === '';
     let marcup=`<svg width="37" height="37">
                     <use href="./images/sprite.svg#user" class="test"></use>
                 </svg>
@@ -14,6 +14,5 @@ function handleClick() {
                     <use href="./images/caret-down.svg" class="test"></use>
                 </svg>`
     elBtnUser.innerHTML = marcup;
-    // elBtnUser.style.backgroundColor='#4F2EE8'
-    console.log(elBtnUser);
+	}
 }
