@@ -13,8 +13,8 @@ categoryLinks.forEach(link => {
   });
 });
 
-seeMoreButtons.forEach(button => {
-  button.addEventListener("click", function(event) {
+container.addEventListener('click', function (event) {
+  if (event.target.classList.contains('js-seemore-btn')) {
     event.preventDefault();
   const category = button.getAttribute("data-category");
   loadBooksByCategory(category);
