@@ -11,3 +11,32 @@ body {
 .js-img-switcher[data-theme="light"] {
 	display: none;
 }
+
+.categories .category-link:hover {
+  color: var(--violet);
+}
+
+.book-title {
+  color: var(--black);
+}
+
+.hero-title {
+  color: var(--black);
+}
+
+.home-card-title {
+  color: var(--black);
+}
+
+.home-category-btn {
+  color: var(--black);
+}
+
+.modal {
+	background: var(--white);
+	border: 2px solid var(--black);
+}
+
+.modal__close-btn { 
+	color: var(--black);
+}
