@@ -1,4 +1,4 @@
-const refs = {
+export const refss = {
 	openModalBtnMenu: document.querySelector('[data-modal-open-menu]'),
 	closeModalBtnMenu: document.querySelector('[data-modal-close-menu]'),
 modalMenu: document.querySelector('[data-modal-menu]'),
@@ -7,24 +7,24 @@ menuGrupModal: document.querySelector(".menu-group-menu"),
 	
 };
 
-refs.openModalBtnMenu.addEventListener('click', toggleModalMenu);
-refs.closeModalBtnMenu.addEventListener('click', toggleModalMenu);
+refss.openModalBtnMenu.addEventListener('click', toggleModalMenu);
+refss.closeModalBtnMenu.addEventListener('click', toggleModalMenu);
 
 	function toggleModalMenu() {
 
 
-		refs.modalMenu.classList.toggle('is-hidden');
-if (!refs.modalMenu.classList.contains('is-hidden')) {
-	refs.openModalBtnMenu.style.display = "none";
-	refs.closeModalBtnMenu.style.display = "block"
-	refs.singUpBtn.style.display = "block"
-	refs.menuGrupModal.style.display="block"
+		refss.modalMenu.classList.toggle('is-hidden');
+if (!refss.modalMenu.classList.contains('is-hidden')) {
+	refss.openModalBtnMenu.style.display = "none";
+	refss.closeModalBtnMenu.style.display = "block"
+	refss.singUpBtn.style.display = "block"
 	document.body.style.overflow = 'hidden';
 } else {
-	refs.openModalBtnMenu.style.display = "block";
-	refs.closeModalBtnMenu.style.display = "none";
-	refs.singUpBtn.style.display = "none"
-	refs.menuGrupModal.style.display="none"
+	refss.openModalBtnMenu.style.display = "block";
+	refss.closeModalBtnMenu.style.display = "none";
+	refss.singUpBtn.style.display = "none"
 	document.body.style.overflow = '';
-	}
+		}
+		
+		
 };

@@ -1,6 +1,6 @@
 import Notiflix from "notiflix";
 import {handleClick} from './header.js';
-
+import { refss } from './menu.js';
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
@@ -20,6 +20,7 @@ refs.authForm.addEventListener('submit', handleAuthFormSubmit);
 
 function toggleModal() {
   refs.modal.classList.toggle('is-hidden');
+	refss.menuGrupModal.style.display = "block"
   if (!refs.modal.classList.contains('is-hidden')) {
     document.body.style.overflow = 'hidden';
   } else {

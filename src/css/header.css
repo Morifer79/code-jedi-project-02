@@ -46,9 +46,9 @@
   gap: 14px;
 }
 
-.btn-user {
+/* .btn-user {
   display: none;
-}
+} */
 
 .img-switcher {
   width: 40px;
@@ -66,16 +66,16 @@
     gap: 16px;
   }
 
-  .btn-user {
-    background-color: inherit;
-    width: 184px;
+  .btn-user.btn-user-help {
+    
     height: 45px;
-    border-radius: 18px;
+    /* border-radius: 18px; */
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 90px;
+    position: static;
   }
 
   .btn-user-text {
@@ -114,7 +114,7 @@
     gap: 8px;
     background-color: inherit;
     border-radius: 36px;
-		display: none;
+    display: none;
   }
 
   .iconify {
