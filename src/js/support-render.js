@@ -1,5 +1,5 @@
 import { supportArr } from './support-list';
-// import Swiper from 'swiper'; не вижу такой библиотеки /npm install swiper/
+import Swiper from 'swiper';
 
 const supportList = document.querySelector('.support-list-js');
 const btnSwiperDown = document.querySelector('.swiper-button__down');
