@@ -67,7 +67,7 @@ function createMarkup(book) {
     <p class="home-card-overlay">quick view</p>
     </div>
       <h3 class="book-title">${book.title}</h3>
-      <p class="book-author">Author: ${book.author}</p>
+      <p class="book-author">${book.author}</p>
     </div>
   `;
 }
