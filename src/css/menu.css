@@ -16,7 +16,7 @@ background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #
 	transform: translate(-50%, -50%) scale(0.8);
 }
 
-.btn-user {
+.btn-user  {
 	 background-color: inherit;
 	 width: 184px;
 	 height: 48px;

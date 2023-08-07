@@ -9,9 +9,12 @@
     margin-bottom: 40px;
   }
 
-  .book-card img {
-    max-width: 335px;
-    margin-bottom: 14px;
+@media screen and (min-width: 1440px) {
+  .category-container {
+    width: 996px;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
   }
 
   .book-card:first-child {

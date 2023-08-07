@@ -1,33 +1,29 @@
 <div class="backdrop-menu is-hidden" data-modal-menu>
 
-	<button type="button" class="singlUpBtn btnMenu" data-modal-open>
+	<button type="button" class=" btn-user btn-user-help" data-modal-open>
 			<span class="menu-btn-user-text">Sign up</span>
-			<svg width="20" height="20">
+			<svg width="20" height="20" class="menu-authuser-icon js-authuser-icon">
+					<use href="./images/sprite.svg#user"></use>
+			</svg>
+			<svg width="20" height="20" class="menu-user-icon js-user-icon">
+					<use href="./images/sprite.svg#user"></use>
+			</svg>
+			<svg width="24" height="24">
 					<use href="./images/sprite.svg#arrow-right" class="test"></use>
 			</svg>
 	</button>
 	<img src="./images/group-books.png" alt="" class="menu-group-books">
+
 	<div class="menu-group-menu">
-
-
-			<button type="button" class="singlUpBtn btnUserMenu">
-					<svg width="20" height="20" class="menu-authuser-icon js-authuser-icon">
-							<use href="./images/sprite.svg#user"></use>
-					</svg>
-					<svg width="20" height="20" class="menu-user-icon js-user-icon">
-							<use href="./images/sprite.svg#user"></use>
-					</svg>
-					<span class="menu-btn-user-name">User</span>
-
-			</button>
 
 			<ul class="header-list-mob-menu js-flax ">
 
 					<li class="header-link-home-menu">
-							<a class="header-page-home-menu" href="#home">HOME</a>
+							<a class="header-page-home-menu" href="./partials/home.html">HOME</a>
 					</li>
 					<li class="header-link-shoping-menu">
-							<a class="header-page-shop-menu js-shopping-cart-btn" href="#shopping-list">SHOPPING LIST</a>
+							<a class="header-page-shop-menu js-shopping-cart-btn" href="./partials/shopping-list.html">SHOPPING
+									LIST</a>
 							<span class="iconify" data-icon="uil:shopping-bag"></span>
 					</li>
 			</ul>

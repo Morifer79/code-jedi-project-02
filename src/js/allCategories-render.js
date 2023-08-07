@@ -36,8 +36,6 @@ async function renderCategoriesList() {
       'beforeend',
       categoriesListMarkup(sortedData)
     );
-
-    addListenersToAllBtns();
   } catch (error) {
     console.log(error);
   }
