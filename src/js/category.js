@@ -14,7 +14,6 @@ container.addEventListener('click', function (event) {
   }
 });
 
-
 container.addEventListener('click', function (event) {
   if (event.target.classList.contains('js-seemore-btn')) {
     event.preventDefault();
