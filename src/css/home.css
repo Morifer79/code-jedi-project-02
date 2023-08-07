@@ -77,7 +77,12 @@
 .home-card-overlay {
   display: none;
 }
-
+/* .home-container.container {
+  padding: 0;
+} */
+.support-wrap.container {
+  padding: 0 20px;
+}
 @media screen and (min-width: 768px) {
   .hero-title {
     font-size: 48px;
@@ -159,4 +164,10 @@ text-transform: uppercase;
   .home-card:is(:hover, :focus) .home-card-overlay {
     transform: translateY(0%);
 }
+.support-wrap {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
 }
