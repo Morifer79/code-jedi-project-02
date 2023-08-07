@@ -1,8 +1,8 @@
-(() => {
-  const refs = {
-    openModalBtn: document.querySelector('[data-modal-open-menu]'),
-    closeModalBtn: document.querySelector('[data-modal-close-menu]'),
-    modal: document.querySelector('[data-modal-menu]'),
+const refs = {
+    openModalBtnMenu: document.querySelector('[data-modal-open-menu]'),
+    closeModalBtnMenu: document.querySelector('[data-modal-close-menu]'),
+  modalMenu: document.querySelector('[data-modal-menu]'),
+    
   };
 
   refs.openModalBtn.addEventListener('click', toggleModal);
@@ -16,5 +16,7 @@
     } else {
       document.body.style.overflow = 'is-hidden';
     }
-  }
-})();
+    
+};
+  
+
