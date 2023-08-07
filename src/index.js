@@ -5,4 +5,4 @@ import './js/theme.js';
 // import './js/shopping-list.js';
 // import './js/category.js';
 // import './js/header.js';
-// import './js/menu.js';
+import './js/menu.js';

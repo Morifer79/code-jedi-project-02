@@ -25,6 +25,7 @@
     border: none;
     background-color: transparent;
     padding: 0;
+    /* display: none; */
 }
 
 .mobe-menu-svg{
@@ -32,9 +33,19 @@ stroke: var(--black);
 display: block;
 }
 
-.close-icon{
-    display: none;
+.mobe-menu-close{
+    width: 28px;
+        height: 28px;
+        background-color: var(--light-bg);
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        display: none;
 }
+
+/* .close-icon{
+    display: none;
+} */
 .header-container{
     height: auto;
     /* max-width: 375px; */
@@ -59,11 +70,18 @@ display: none;
     /* position: absolute; */
     display: none;
 }
-.img-switcher{
+.img-switcher-lith{
     width: 40px;
     height: 24px;
     
    
+}
+.img-switcher-black {
+    width: 40px;
+    height: 24px;
+    display: none;
+
+
 }
 
 @media screen and (min-width: 768px){
