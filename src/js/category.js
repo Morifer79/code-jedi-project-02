@@ -1,28 +1,29 @@
 import { getSeparateCategories } from './api'; 
+import { container } from './home.js'
 
-const categoryLinks = document.querySelectorAll(".category-link");
-const booksContainer = document.querySelector(".books");
-const seeMoreButtons = document.querySelectorAll(".js-seemore-btn");
+// const categoryLinks = document.querySelectorAll(".category-link");
+// const booksContainer = document.querySelector(".books");
+// const seeMoreButtons = document.querySelectorAll(".js-seemore-btn");
 
 
-categoryLinks.forEach(link => {
-  link.addEventListener("click", function(event) {
+container.addEventListener('click', function (event) {
+  if (event.target.classList.contains('category-link')) {
     event.preventDefault();
-    const category = link.getAttribute("data-category");
+    const category = event.target.getAttribute('data-category');
     loadBooksByCategory(category);
-  });
+  }
 });
 
 container.addEventListener('click', function (event) {
   if (event.target.classList.contains('js-seemore-btn')) {
     event.preventDefault();
-  const category = button.getAttribute("data-category");
-  loadBooksByCategory(category);
-  }});
-
+    const category = event.target.getAttribute('data-category');
+    loadBooksByCategory(category);
+  }
+});
 
 function loadBooksByCategory(category) {
-  const categoryNameElement = document.querySelector(".category-title");
+  const categoryNameElement = document.querySelector(".hero-title");
   const categoryName = ` ${category} `;
   categoryNameElement.textContent = categoryName;
 
@@ -44,10 +45,14 @@ function loadBooksByCategory(category) {
     .then(response => {
       if (response.length > 0) {
         console.table(response); 
-        const booksMarkup = response.map(book => createMarkup(book)).join("");
-       return booksContainer.innerHTML = booksMarkup;
+        const booksMarkup = 
+          `<ul class="home-category-cards category-books">
+            ${response.map(book => createMarkup(book)).join('')}
+          </ul>`
+        ;
+       return container.innerHTML = booksMarkup;
       } else {
-        booksContainer.innerHTML = `<p>No found books in category "${category}".</p>`;
+        container.innerHTML = `<p>No found books in category "${category}".</p>`;
       }
     })
     .catch(error => {
@@ -58,7 +63,10 @@ function loadBooksByCategory(category) {
 function createMarkup(book) {
   return `
     <div class="book-card">
-      <img src="${book.book_image}" alt="${book.title}" class="book-image">
+    <div class="home-card-wrap">
+    <img src="${book.book_image}" alt="${book.title} class="book-image" loading="lazy" width="335">
+    <p class="home-card-overlay">quick view</p>
+    </div>
       <h3 class="book-title">${book.title}</h3>
       <p class="book-author">Author: ${book.author}</p>
     </div>
