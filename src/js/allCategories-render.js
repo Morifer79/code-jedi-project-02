@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const categoriesList = document.querySelector('.category-link');
+export const categoriesList = document.querySelector('.category-link');
 
 const URL = {
   all: 'https://books-backend.p.goit.global/books/category-list',

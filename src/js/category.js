@@ -1,13 +1,12 @@
-import { getSeparateCategories } from './api'; 
-import { container } from './home.js'
-
+import { getSeparateCategories } from './api';
+import { container } from './home.js';
+import { categoriesList } from './allCategories-render';
 // const categoryLinks = document.querySelectorAll(".category-link");
 // const booksContainer = document.querySelector(".books");
 // const seeMoreButtons = document.querySelectorAll(".js-seemore-btn");
 
-
-container.addEventListener('click', function (event) {
-  if (event.target.classList.contains('category-link')) {
+categoriesList.addEventListener('click', function (event) {
+  if (event.target.classList.contains('allcategories-list__btn-js')) {
     event.preventDefault();
     const category = event.target.getAttribute('data-category');
     loadBooksByCategory(category);
