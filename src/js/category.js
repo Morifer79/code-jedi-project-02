@@ -6,7 +6,7 @@ import { container } from './home.js'
 // const seeMoreButtons = document.querySelectorAll(".js-seemore-btn");
 
 
-document.addEventListener('click', function (event) {
+container.addEventListener('click', function (event) {
   if (event.target.classList.contains('category-link')) {
     event.preventDefault();
     const category = event.target.getAttribute('data-category');
@@ -15,7 +15,7 @@ document.addEventListener('click', function (event) {
 });
 
 
-document.addEventListener('click', function (event) {
+container.addEventListener('click', function (event) {
   if (event.target.classList.contains('js-seemore-btn')) {
     event.preventDefault();
     const category = event.target.getAttribute('data-category');
