@@ -18,8 +18,8 @@ container.addEventListener('click', function (event) {
     event.preventDefault();
   const category = button.getAttribute("data-category");
   loadBooksByCategory(category);
-  });
-});
+  }});
+
 
 function loadBooksByCategory(category) {
   const categoryNameElement = document.querySelector(".category-title");
