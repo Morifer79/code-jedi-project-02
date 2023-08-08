@@ -1,6 +1,8 @@
 import { getSeparateCategories } from './api';
 import { container } from './home.js';
-import { categoriesList } from './allCategories-render';
+import { categoriesList } from './allCategories-render'
+import { loader } from './home.js';
+import { homeRender } from './home.js';
 // const categoryLinks = document.querySelectorAll(".category-link");
 // const booksContainer = document.querySelector(".books");
 // const seeMoreButtons = document.querySelectorAll(".js-seemore-btn");
@@ -8,48 +10,48 @@ import { categoriesList } from './allCategories-render';
 categoriesList.addEventListener('click', function (event) {
   if (event.target.classList.contains('allcategories-list__btn-js')) {
     event.preventDefault();
+    container.innerHTML = '';
+    loader.classList.remove('hide');
     const category = event.target.getAttribute('data-category');
     loadBooksByCategory(category);
+  } else if (event.target.classList.contains('js-allcategories-btn')) {
+    event.preventDefault();
+    container.innerHTML = '';
+    loader.classList.remove('hide');
+    homeRender();
   }
 });
 
 container.addEventListener('click', function (event) {
   if (event.target.classList.contains('js-seemore-btn')) {
     event.preventDefault();
+    container.innerHTML = '';
+    loader.classList.remove('hide');
     const category = event.target.getAttribute('data-category');
     loadBooksByCategory(category);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 });
 
 function loadBooksByCategory(category) {
-  const categoryNameElement = document.querySelector(".hero-title");
-  const categoryName = ` ${category} `;
-  categoryNameElement.textContent = categoryName;
-
-  const words = categoryName.split(" ");
-  const lastWord = words[words.length - 2]; 
-
-  const lastWordElement = document.createElement("span");
-  lastWordElement.textContent = lastWord;
-  lastWordElement.style.color = "#4F2EE8"; 
-
-  categoryNameElement.innerHTML = categoryName.replace(
-    lastWord,
-    lastWordElement.outerHTML
-  );
-
-  console.log(`Loading books in category "${category}"...`);
+  const words = category.split(" ");
+  const lastWord = words.pop(); 
+  const firstWords = words.join(" ");
+const categoryTitle = `<h1 class="hero-title animate-bottom">${firstWords} <span class="hero-title-accent">${lastWord}</span>
+</h1>`;
 
   getSeparateCategories(category)
     .then(response => {
       if (response.length > 0) {
-        console.table(response); 
-        const booksMarkup = 
-          `<ul class="home-category-cards category-books home-container.container">
+        const booksMarkup = `<ul class="home-category-cards category-books home-container.container animate-bottom">
             ${response.map(book => createMarkup(book)).join('')}
-          </ul>`
-        ;
-       return container.innerHTML = booksMarkup;
+          </ul>`;
+          ;
+        loader.classList.add('hide');
+       return container.innerHTML = categoryTitle + booksMarkup;
       } else {
         container.innerHTML = `<p>No found books in category "${category}".</p>`;
       }

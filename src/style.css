@@ -9,6 +9,9 @@
 @import url('./css/pop-up.css');
 @import url('./css/go-top.css');
 @import url('./css/menu.css');
+@import url('./css/theme-dark.css');
+@import url('./css/theme-light.css');
+@import url('./css/loader.css');
 
 :root {
 	--font-family: 'DM Sans', sans-serif;

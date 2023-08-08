@@ -8,6 +8,9 @@
     max-width: 335px;
     margin-bottom: 40px;
   }
+	.book-card img{
+		border-radius: 8px;
+	}
 
   .book-title {
     color: var(--black);
@@ -134,6 +137,3 @@
       transform: translateY(0%);
   }
   }
-    
-  
-
