@@ -5,7 +5,10 @@ export const container = document.querySelector('.js-home-markup');
 export const loader = document.querySelector('.loader');
 const title = `<h1 class="hero-title animate-bottom">Best Sellers <span class="hero-title-accent">Books</span>
 </h1>`;
-loader.classList.remove('hide');
+function loaderView() {
+  loader.classList.remove('hide');
+}
+loaderView();
 
 homeRender();
 
