@@ -1,13 +1,12 @@
-import { getSeparateCategories } from './api'; 
-import { container } from './home.js'
-
+import { getSeparateCategories } from './api';
+import { container } from './home.js';
+import { categoriesList } from './allCategories-render';
 // const categoryLinks = document.querySelectorAll(".category-link");
 // const booksContainer = document.querySelector(".books");
 // const seeMoreButtons = document.querySelectorAll(".js-seemore-btn");
 
-
-container.addEventListener('click', function (event) {
-  if (event.target.classList.contains('category-link')) {
+categoriesList.addEventListener('click', function (event) {
+  if (event.target.classList.contains('allcategories-list__btn-js')) {
     event.preventDefault();
     const category = event.target.getAttribute('data-category');
     loadBooksByCategory(category);
@@ -39,14 +38,12 @@ function loadBooksByCategory(category) {
     lastWordElement.outerHTML
   );
 
-  console.log(`Loading books in category "${category}"...`);
 
   getSeparateCategories(category)
     .then(response => {
       if (response.length > 0) {
-        console.table(response); 
         const booksMarkup = 
-          `<ul class="home-category-cards category-books">
+          `<ul class="home-category-cards category-books home-container.container">
             ${response.map(book => createMarkup(book)).join('')}
           </ul>`
         ;
@@ -68,7 +65,7 @@ function createMarkup(book) {
     <p class="home-card-overlay">quick view</p>
     </div>
       <h3 class="book-title">${book.title}</h3>
-      <p class="book-author">Author: ${book.author}</p>
+      <p class="book-author">${book.author}</p>
     </div>
   `;
 }

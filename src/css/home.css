@@ -4,7 +4,6 @@
   line-height: 1.19;
   letter-spacing: -1.28px;
   margin-bottom: 40px;
-  max-width: 335px;
   transition: text-shadow var(--transition);
 }
 .home-container {
