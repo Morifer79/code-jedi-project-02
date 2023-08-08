@@ -1,0 +1,98 @@
+html,
+body {
+	background-color: var(--black-1);
+	color: var(--white);
+}
+
+.js-img-switcher[data-theme="dark"]{
+	display: none;
+}
+
+.js-img-switcher[data-theme="light"] {
+	display: block;
+}
+
+.categories .category-link:hover {
+  color: var(--yellow);
+}
+
+.book-title {
+  color: var(--white);
+}
+
+.hero-title {
+  color: var(--white);
+}
+
+.home-card-title {
+  color: var(--white);
+}
+
+.home-category-btn {
+  color: var(--white);
+}
+
+.modal {
+	background: var(--black);
+	border: 2px solid var(--white);
+}
+
+.modal__close-btn { 
+	color: var(--white);
+}
+
+.mobe-menu-svg {
+  stroke: var(--white);
+}
+
+.header-link-shoping-menu{
+	color: var(--black);
+}
+
+.modal__add-btn:hover,
+.modal__add-btn:focus,
+.modal__remove-btn:hover,
+.modal__remove-btn:focus {
+		color: var(--black-1);
+}
+
+.modal-start {
+  background-color: var(--black-1);
+  border: 2px solid var(--white);
+}
+
+.close-icon {
+  stroke: var(--white);
+}
+
+.authorization-input {
+  border: 2px solid var(--white);
+}
+
+.svg-email,
+.svg-password {
+  stroke: var(--white);
+}
+
+.signup-btn {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.signup-btn:hover,
+.signup-btn:focus {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.authorization-input::placeholder {
+  color: var(--white);
+}
+
+.allcategories-list__btn:hover {
+	color: var(--yellow);
+}
+
+.allcategories-list__btn:focus {
+	color: var(--yellow);
+}
