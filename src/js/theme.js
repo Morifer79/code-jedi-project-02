@@ -8,14 +8,14 @@ themeSwitchers.forEach(switcher => {
 });
 
 function applyTheme(themeName) {
-	let themeUrl = `css/theme-${themeName}.css`;
+	let themeUrl = `./css/theme-${themeName}.css`;
 	document.querySelector('[title="theme"]').setAttribute('href', themeUrl);
 }
 
 let activeTheme = localStorage.getItem('theme');
 
 if (activeTheme === null) {
-	applyTheme('light');
+	applyTheme('dark');
 } else {
 	applyTheme(activeTheme);
 }

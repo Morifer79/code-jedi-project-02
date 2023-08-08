@@ -9,7 +9,7 @@
 					<ul class="header-list js-flax ">
 
 							<li class="header-link-home">
-									<a class="header-page-home" href="./partials/home.html">HOME</a>
+									<a class="header-page-home" href="./index.html">HOME</a>
 							</li>
 							<li class="header-link-shoping js-shopping-cart-btn">
 									<a class="header-page-shop" href="./partials/shopping-list.html">SHOPPING LIST</a>
@@ -19,15 +19,17 @@
 			</nav>
 			<div class="js-flax container-rith-btn">
 					<div class="theme">
-
-							<img src="./images/switcher-lith.svg" alt="" class="img-switcher-lith js-img-switcher"
-									data-theme="light">
-							<img src="./images/switcher-black.svg" alt="" class="img-switcher-black js-img-switcher"
-									data-theme="dark">
+							<button type="button" class="btn-theme">
+									<img src="./images/switcher-lith.svg" alt="" class="img-switcher-lith js-img-switcher"
+											data-theme="light">
+									<img src="./images/switcher-black.svg" alt="" class="img-switcher-black js-img-switcher"
+											data-theme="dark">
+							</button>
 					</div>
-					<button type="button" class=" btn-user btn-user-help" data-modal-open>
+					<script src="./js/theme.js"></script>
+					<button type="button" class="  btn-user-help" data-modal-open>
 							<span class="btn-user-text">Sign up</span>
-							<svg width="24" height="24">
+							<svg width="20" height="20">
 									<use href="./images/sprite.svg#arrow-right" class="test"></use>
 							</svg>
 					</button>

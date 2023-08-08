@@ -16,7 +16,7 @@ background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #
 	transform: translate(-50%, -50%) scale(0.8);
 }
 
-.btn-user  {
+/* .btn-user  {
 	 background-color: inherit;
 	 width: 184px;
 	 height: 48px;
@@ -32,6 +32,21 @@ background: radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4F2EE8 18.03%, #
 flex-shrink: 0;
 border: 1.5px solid #111;
 display: none;
+} */
+
+.btn-user-helper{
+	width: 184px;
+	height: 48px;
+	flex-shrink: 0;
+	border-radius: 18px;
+	border: 1.5px solid var(--black);
+	background-color: var(--violet);
+padding: 0 14px;
+	position: absolute;
+	top: 104px;
+	left: 20px;
+	align-items: center;
+			justify-content: space-between;
 }
 
 .menu-btn-user-text{
@@ -95,15 +110,23 @@ color: var(--white);
 			flex-direction: column;
 			padding: 0 18px;
 }
-.header-link-home-menu{
-	
+.header-link-home-menu {
 	width: 72px;
-			height: 34px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+	height: 34px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	background-color: var(--yellow);
-			border-radius: 36px;
+	border-radius: 36px;
+}
+
+.header-page-home {
+	color: var(--black);
+	font-size: 14px;
+
+	line-height: 1.28;
+	letter-spacing: -0.56px;
+	text-transform: uppercase;
 }
 
 
@@ -126,6 +149,24 @@ padding-top: 17px;
 			text-transform: uppercase;
 }
 
+
+
+
+.header-page-home {
+	color: var(--black);
+	font-size: 14px;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	line-height: 1.28;
+	letter-spacing: -0.56px;
+	text-transform: uppercase;
+}
+
+
+
+
+
+
+
 .header-page-home-menu{
 	font-size: 14px;
 			line-height: 1.28;
@@ -138,7 +179,8 @@ padding-top: 17px;
 			width: 118px;
 			height: 48px;
 			border-radius: 18px;
-			padding: 0;
+			border: 1.5px solid var(--black);
+			
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -154,4 +196,16 @@ padding-top: 17px;
 	font-weight: 500;
 	line-height: 1.28;
 	letter-spacing: -0.56px;
+}
+
+@media screen and (min-width: 768px) {
+	.backdrop-menu{
+			display: none;
+	}
+/* .btn-user.btn-user-help{
+	display: none;
+} */
+			/* .mobe-menu-close.helper{
+			display: none;
+	} */
 }

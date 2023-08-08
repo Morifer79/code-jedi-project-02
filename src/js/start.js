@@ -3,6 +3,9 @@ import {handleClick} from './header.js';
 import { refss } from './menu.js';
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
+
+  test: document.querySelector('[data-modal-open-mob]'),
+  
   closeModalBtn: document.querySelector('[data-modal-close]'),
   modal: document.querySelector('[data-modal]'),
   authForm: document.getElementById('authForm'),
@@ -10,7 +13,10 @@ const refs = {
   signInLink: document.querySelector('.sign-in-link'),
   signUpBtn: document.querySelector('.signup-btn'),
   cartIcon: document.querySelector('.js-shopping-cart-btn'),
+  
 };
+
+refs.test.addEventListener('click', toggleModal);
 
 refs.openModalBtn.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
@@ -19,8 +25,8 @@ refs.signInLink.addEventListener('click', toggleAuthMode);
 refs.authForm.addEventListener('submit', handleAuthFormSubmit);
 
 function toggleModal() {
+  refss.menuGrupModal.style.display = "block"
   refs.modal.classList.toggle('is-hidden');
-	refss.menuGrupModal.style.display = "block"
   if (!refs.modal.classList.contains('is-hidden')) {
     document.body.style.overflow = 'hidden';
   } else {
@@ -57,7 +63,7 @@ function handleAuthFormSubmit(e) {
     setTimeout(() => {
       toggleModal();
       handleClick();
-			changeCartIcon();
+      changeCartIcon();
     }, 2000);
     e.target.reset();
   } else {
@@ -74,7 +80,7 @@ function handleAuthFormSubmit(e) {
         setTimeout(() => {
           toggleModal();
           handleClick();
-					changeCartIcon();
+          changeCartIcon();
         }, 2000);
         e.target.reset();
       } else {
@@ -87,5 +93,5 @@ function handleAuthFormSubmit(e) {
 }
 
 function changeCartIcon () {
-      refs.cartIcon.style.display = 'block';
+      refs.cartIcon.style.display = 'flex';
 }
