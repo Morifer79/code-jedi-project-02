@@ -1,3 +1,5 @@
+/* --------HOME-------- */
+
 .hero-title {
   color: var(--black);
   font-size: 32px;
@@ -9,6 +11,7 @@
 .home-container {
   padding: 0;
   max-width: 335px;
+  position: relative;
 }
 .hero-title-accent {
   color: var(--violet);
@@ -30,6 +33,7 @@
   max-width: 335px;
   margin-bottom: 20px;
   display: none;
+  cursor: pointer;
 }
 .home-card:first-child {
   display: block;
@@ -80,9 +84,6 @@
 .home-card-overlay {
   display: none;
 }
-/* .home-container.container {
-  padding: 0;
-} */
 .support-wrap.container {
   padding: 0 20px;
 }
@@ -178,5 +179,8 @@ text-transform: uppercase;
   display: flex;
   gap: 40px;
   align-items: flex-start;
+}
+.bookshelf_wrapper {
+  width: 996px;
 }
 }

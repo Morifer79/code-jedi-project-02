@@ -97,7 +97,7 @@
 .svg-email,
 .svg-password {
   position: absolute;
-  right: 44px;
+  right: 24px;
   top: 16px;
   width: 18px;
   height: 18px;
@@ -169,7 +169,7 @@
 }
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 @media screen and (min-width: 768px) {
-  .modal {
+  .modal-start {
     max-width: 579px;
     padding: 80px 40px 40px 40px;
   }
