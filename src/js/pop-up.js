@@ -45,15 +45,19 @@ if (currentStorage) {
 }
 container.addEventListener('click', handleBookClick);
     
-    function handleBookClick(event) {
-      if (event.target !== event.currentTarget && !event.target.classList.contains('js-seemore-btn')
-      ) {
-        event.preventDefault();
-        const liEl = event.target.closest('.home-card');
-        const id = liEl.id;
-       handleModalWindow(id);
-      }
-    }
+function handleBookClick(event) {
+	if (
+		event.target.closest('.home-card') ||
+			event.target.closest('.book-card')
+	) {
+		event.preventDefault();
+		const liEl =
+			event.target.closest('.home-card') ||
+			event.target.closest('.book-card');
+		const id = liEl.id;
+		handleModalWindow(id);
+	}
+}
 export async function handleModalWindow(bookId) {
   spiner.show();
   try {
@@ -103,18 +107,6 @@ console.log(bookData);
     if (isBookInStorage && IsUserLogged) {
       refs.addBtn.classList.add('is-hidden');
       refs.removeBlock.classList.remove('is-hidden');
-    }
-
-    function handleBookClick(event) {
-      if (event.target !== event.currentTarget && !event.target.classList.contains('js-seemore-btn')
-      ) {
-        event.preventDefault();
-        const liEl =
-          event.target.closest('.home-card') ||
-          event.target.closest('.book-card');
-        const id = liEl.id;
-       handleModalWindow(id);
-      }
     }
 
     window.addEventListener('keydown', handleEscKeyPress);
