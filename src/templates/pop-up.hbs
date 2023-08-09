@@ -8,7 +8,9 @@
     </button>
     
     <div class="modal__wrapper modal__wrapper-js">
-        <img class="modal__img" src="{{book_image}}" alt="Book image">
+        <div class="modal__img"> 
+            <img  src="{{book_image}}" alt="Book image">
+        </div>
         <div class="modal__content">
             <h3 class="modal__title">{{title}}</h3>
             <p class="modal__author">{{author}}</p>
@@ -53,16 +55,16 @@
             </ul>
         </div>
 
-        <button class="modal__add-btn modal__add-btn-js" type="submit">
-        add to shopping list
-        </button>
-        <div class="modal__remove-btn-wrapper modal__remove-block-js">
-        <button class="modal__remove-btn modal__remove-btn-js" type="submit">
-            remove from the shopping list
-        </button>
-        <p class="modal__remobe-btn-message">
-            Сongratulations! You have added the book to the shopping list. To
-        delete, press the button “Remove from the shopping list”.
-        </p>
-
     </div>
+
+        <button class="modal__add-btn modal__add-btn-js" type="submit">
+    add to shopping list
+    </button>
+    <div class="modal__remove-btn-wrapper modal__remove-block-js">
+    <button class="modal__remove-btn modal__remove-btn-js" type="submit">
+        remove from the shopping list
+    </button>
+    <p class="modal__remobe-btn-message">
+        Сongratulations! You have added the book to the shopping list. To
+    delete, press the button “Remove from the shopping list”.
+    </p>
