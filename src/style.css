@@ -35,11 +35,6 @@ body {
 	background-color: var(--light-bg);
 }
 
-.dark-theme{
-	background-color: var(--black-1);
-	color: var(--white);
-}
-
 .container {
 	margin: 0 auto;
 	padding: 0 20px;

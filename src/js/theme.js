@@ -4,7 +4,7 @@ const Theme = {
 }
 
 const body = document.body;
-const btn = document.querySelector('.theme-switch');
+const btn = document.querySelector('.js-theme-switch');
 btn.addEventListener('change', changeTheme);
 
 currentTheme();

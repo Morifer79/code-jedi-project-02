@@ -1,98 +1,89 @@
-html,
-body {
+.dark-theme{
 	background-color: var(--black-1);
 	color: var(--white);
 }
 
-.js-img-switcher[data-theme="dark"]{
-	display: none;
-}
-
-.js-img-switcher[data-theme="light"] {
-	display: block;
-}
-
-.categories .category-link:hover {
+body.dark-theme.categories .category-link:hover {
   color: var(--yellow);
 }
 
-.book-title {
+body.dark-theme.book-title {
   color: var(--white);
 }
 
-.hero-title {
+body.dark-theme.hero-title {
   color: var(--white);
 }
 
-.home-card-title {
+body.dark-theme.home-card-title {
   color: var(--white);
 }
 
-.home-category-btn {
+body.dark-theme.home-category-btn {
   color: var(--white);
 }
 
-.modal {
+body.dark-theme.modal {
 	background: var(--black);
 	border: 2px solid var(--white);
 }
 
-.modal__close-btn { 
+body.dark-theme.modal__close-btn { 
 	color: var(--white);
 }
 
-.mobe-menu-svg {
+body.dark-theme.mobe-menu-svg {
   stroke: var(--white);
 }
 
-.header-link-shoping-menu{
+body.dark-theme.header-link-shoping-menu{
 	color: var(--black);
 }
 
-.modal__add-btn:hover,
-.modal__add-btn:focus,
-.modal__remove-btn:hover,
-.modal__remove-btn:focus {
+body.dark-theme.modal__add-btn:hover,
+body.dark-theme.modal__add-btn:focus,
+body.dark-theme.modal__remove-btn:hover,
+body.dark-theme.modal__remove-btn:focus {
 		color: var(--black-1);
 }
 
-.modal-start {
+body.dark-theme.modal-start {
   background-color: var(--black-1);
   border: 2px solid var(--white);
 }
 
-.close-icon {
+body.dark-theme.close-icon {
   stroke: var(--white);
 }
 
-.authorization-input {
+body.dark-theme.authorization-input {
   border: 2px solid var(--white);
 }
 
-.svg-email,
-.svg-password {
+body.dark-theme.svg-email,
+body.dark-theme.svg-password {
   stroke: var(--white);
 }
 
-.signup-btn {
+body.dark-theme.signup-btn {
   background-color: var(--white);
   color: var(--black);
 }
 
-.signup-btn:hover,
-.signup-btn:focus {
+body.dark-theme.signup-btn:hover,
+body.dark-theme.signup-btn:focus {
   background-color: var(--black);
   color: var(--white);
 }
 
-.authorization-input::placeholder {
+body.dark-theme.authorization-input::placeholder {
   color: var(--white);
 }
 
-.allcategories-list__btn:hover {
+body.dark-theme.allcategories-list__btn:hover {
 	color: var(--yellow);
 }
 
-.allcategories-list__btn:focus {
+body.dark-theme.allcategories-list__btn:focus {
 	color: var(--yellow);
 }
