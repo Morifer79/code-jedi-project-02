@@ -4,7 +4,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .book-card {
+  .book-card { 
+    display: inline-block;
     max-width: 335px;
     margin-bottom: 40px;
   }
@@ -35,6 +36,16 @@
   .book-card:is(:hover, :focus) .book-title {
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
+
+  .animated {
+    animation-duration: 1s;
+  }
+  
+  .animate-fadeInUp {
+    animation-name: fadeInUp;
+  }
+
+  
 }
   
   @media screen and (min-width: 768px) {
@@ -78,6 +89,8 @@
     .book-card:is(:hover, :focus) .book-title {
       text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     }
+
+    .stretchRight{ animation-name: stretchRight; -webkit-animation-name: stretchRight; animation-duration: 1.5s; -webkit-animation-duration: 1.5s; animation-timing-function: ease-out; -webkit-animation-timing-function: ease-out; transform-origin: 0% 0%; -ms-transform-origin: 0% 0%; -webkit-transform-origin: 0% 0%; } @keyframes stretchRight { 0% { transform: scaleX(0.3); } 40% { transform: scaleX(1.02); } 60% { transform: scaleX(0.98); } 80% { transform: scaleX(1.01); } 100% { transform: scaleX(0.98); } 80% { transform: scaleX(1.01); } 100% { transform: scaleX(1); } } @-webkit-keyframes stretchRight { 0% { -webkit-transform: scaleX(0.3); } 40% { -webkit-transform: scaleX(1.02); } 60% { -webkit-transform: scaleX(0.98); } 80% { -webkit-transform: scaleX(1.01); } 100% { -webkit-transform: scaleX(0.98); } 80% { -webkit-transform: scaleX(1.01); } 100% { -webkit-transform: scaleX(1); } }
   }
 
   @media screen and (min-width: 1440px) {
@@ -105,7 +118,8 @@
       .book-card:first-child {
       display: block;
     }
-    
+
+   
 
     .home-card-wrap {
       position: relative;
