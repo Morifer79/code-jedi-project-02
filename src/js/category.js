@@ -22,32 +22,30 @@ container.addEventListener('click', function (event) {
 });
 
 function loadBooksByCategory(category) {
-  const categoryNameElement = document.querySelector(".hero-title");
+  const categoryNameElement = document.querySelector('.hero-title');
   const categoryName = ` ${category} `;
   categoryNameElement.textContent = categoryName;
 
-  const words = categoryName.split(" ");
-  const lastWord = words[words.length - 2]; 
+  const words = categoryName.split(' ');
+  const lastWord = words[words.length - 2];
 
-  const lastWordElement = document.createElement("span");
+  const lastWordElement = document.createElement('span');
   lastWordElement.textContent = lastWord;
-  lastWordElement.style.color = "#4F2EE8"; 
+  lastWordElement.style.color = '#4F2EE8';
 
   categoryNameElement.innerHTML = categoryName.replace(
     lastWord,
     lastWordElement.outerHTML
   );
 
-
   getSeparateCategories(category)
     .then(response => {
       if (response.length > 0) {
-        const booksMarkup = 
-          `<ul class="home-category-cards category-books home-container.container">
+        const booksMarkup = `<ul class="home-category-cards category-books home-container.container">
             ${response.map(book => createMarkup(book)).join('')}
-          </ul>`
-        ;
-       return container.innerHTML = booksMarkup;
+          </ul>`;
+        return (container.innerHTML = booksMarkup);
+        // animateBooks();
       } else {
         container.innerHTML = `<p>No found books in category "${category}".</p>`;
       }
@@ -69,3 +67,25 @@ function createMarkup(book) {
     </div>
   `;
 }
+
+// document.addEventListener('DOMContentLoaded', function () {
+//   const bookCards = document.querySelectorAll('.book-card');
+//   bookCards.forEach((bookCard, index) => {
+//     bookCard.style.transitionDelay = `${index * 0.1}s`;
+//     bookCard.classList.add('animated');
+//   });
+// });
+
+// function animateBooks() {
+//   const bookCards = document.querySelectorAll('.book-card');
+//   const containerWidth = container.offsetWidth;
+//   const containerHeight = container.offsetHeight;
+
+//   bookCards.forEach(bookCard => {
+//     const randomX = Math.random() * (containerWidth - 200);
+//     const randomY = Math.random() * (containerHeight - 200);
+
+//     bookCard.style.transform = `translate(${randomX}px, ${randomY}px)`;
+//     bookCard.classList.add('animated');
+//   });
+// }
