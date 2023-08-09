@@ -155,81 +155,81 @@
 
 @media screen and (min-width: 768px) {
 	.container-allcategories-support.container {
-			max-width: 704px;
+		max-width: 704px;
 	}
 
 	.container-allcategories-support {
-			display: flex;
-			justify-content: center;
-			gap: 32px;
-			margin-bottom: 100px;
+		display: flex;
+		justify-content: center;
+		gap: 32px;
+		margin-bottom: 100px;
 	}
 
 	.allcategories {
-			width: 337px;
-			height: 472px;
-			margin-bottom: 0;
+		width: 337px;
+		height: 472px;
+		margin-bottom: 0;
 	}
 
 	.allcategories-list {
-			gap: 32px;
+		gap: 32px;
 	}
 
 	.allcategories-list__btn {
-			font-size: 18px;
-			line-height: 1.33;
+		font-size: 18px;
+		line-height: 1.33;
 	}
 
 	.allcategories-list__btn:focus {
-			line-height: 1.5;
+		line-height: 1.5;
 
 	}
 
 	.support {
-			width: 335px;
-			height: 474px;
-			padding: 26px 40px 24px;
-			margin-bottom: 100px;
+		width: 335px;
+		height: 474px;
+		padding: 26px 40px 24px;
+		margin-bottom: 100px;
 	}
 
 	.support-title {
-			font-size: 24px;
-			line-height: 1.16;
+		font-size: 24px;
+		line-height: 1.16;
 	}
 
 	.swiper {
-			height: 292px;
-			margin-bottom: 24px;
+		height: 292px;
+		margin-bottom: 24px;
 	}
 
 	.support-btn {
-			width: 38px;
-			height: 38px;
+		width: 38px;
+		height: 38px;
 	}
 }
 
 @media screen and (min-width: 1440px) {
 	.container-allcategories-support.container {
-			max-width: 356px;
+		max-width: 356px;
 
 	}
 
 	.container-allcategories-support {
-			display: flex;
-			flex-direction: column;
-			gap: 86px;
-			position: sticky;
-			top: -25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 86px;
+		position: sticky;
+		top: -30rem;
 	}
 
 	.allcategories {
-			width: 356px;
-			height: 472px;
+		width: 356px;
+		height: 472px;
 	}
 
 	.support {
-			width: 356px;
-			height: 474px;
-			margin-bottom: 0;
+		width: 356px;
+		height: 474px;
+		margin-bottom: 0;
 	}
 }

@@ -3,9 +3,6 @@ import { container } from './home.js';
 import { categoriesList } from './allCategories-render'
 import { loader } from './home.js';
 import { homeRender } from './home.js';
-// const categoryLinks = document.querySelectorAll(".category-link");
-// const booksContainer = document.querySelector(".books");
-// const seeMoreButtons = document.querySelectorAll(".js-seemore-btn");
 
 categoriesList.addEventListener('click', function (event) {
   if (event.target.classList.contains('allcategories-list__btn-js')) {
@@ -63,7 +60,7 @@ const categoryTitle = `<h1 class="hero-title animate-bottom">${firstWords} <span
 
 function createMarkup(book) {
   return `
-    <div class="book-card">
+    <div class="book-card stretchRight" id="${book._id}">
     <div class="home-card-wrap">
     <img src="${book.book_image}" alt="${book.title} class="book-image" loading="lazy" width="335">
     <p class="home-card-overlay">quick view</p>
