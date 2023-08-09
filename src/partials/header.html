@@ -1,7 +1,7 @@
-<header class="header">
+<header class="header ">
 	<div class="container js-flax header-container">
 			<nav class="hedear-nav js-nav js-flax">
-					<a href="./partials/home.html">
+					<a href="./index.html" class="heade-logo">
 							<svg width="109" height="28" class="header-nav-icon">
 									<use href="./images/sprite.svg#logo"></use>
 							</svg>
@@ -18,16 +18,8 @@
 					</ul>
 			</nav>
 			<div class="js-flax container-rith-btn">
-					<div class="theme">
-							<button type="button" class="btn-theme">
-									<img src="./images/switcher-lith.svg" alt="" class="img-switcher-lith js-img-switcher"
-											data-theme="light">
-									<img src="./images/switcher-black.svg" alt="" class="img-switcher-black js-img-switcher"
-											data-theme="dark">
-							</button>
-					</div>
-					<script src="./js/theme.js"></script>
-					<button type="button" class="  btn-user-help" data-modal-open>
+				<input type="checkbox" id="switch" class="js-theme-switch"/><label for="switch"></label>
+					<button type="button" class="btn-user-help" data-modal-open>
 							<span class="btn-user-text">Sign up</span>
 							<svg width="20" height="20">
 									<use href="./images/sprite.svg#arrow-right" class="test"></use>
