@@ -24,7 +24,7 @@ const globalRefs = {
 };
 
 const BOOKS_DATA_KEY = 'books-data';
-const USER_DATA_KEY = 'user-data';
+const USER_DATA_KEY = 'userData';
 const bookArray = [];
 const currentStorage = JSON.parse(localStorage.getItem(BOOKS_DATA_KEY));
 const spiner = new Spiner();
@@ -45,25 +45,25 @@ if (currentStorage) {
 }
 container.addEventListener('click', handleBookClick);
     
-function handleBookClick(event) {
-	if (
-		event.target.closest('.home-card') ||
-			event.target.closest('.book-card')
-	) {
-		event.preventDefault();
-		const liEl =
-			event.target.closest('.home-card') ||
-			event.target.closest('.book-card');
-		const id = liEl.id;
-		handleModalWindow(id);
-	}
-}
+    function handleBookClick(event) {
+      if (
+        event.target.closest('.home-card') ||
+        event.target.closest('.book-card')
+      ) {
+        event.preventDefault();
+        const liEl =
+          event.target.closest('.home-card') ||
+          event.target.closest('.book-card');
+        id = liEl.id;
+        handleModalWindow(id);
+      }
+    }
 export async function handleModalWindow(bookId) {
   spiner.show();
   try {
     const bookData = await getBookInfo(bookId);
-    const IsUserLogged = JSON.parse(localStorage.getItem(USER_DATA_KEY));
-console.log(bookData);
+    const isUserLogged = JSON.parse(localStorage.getItem(USER_DATA_KEY));
+
     let amazonUrl = bookData.buy_links.find(
       book => book.name === 'Amazon'
     ).url;
@@ -94,17 +94,18 @@ console.log(bookData);
       removeBtn: document.querySelector('.modal__remove-btn-js'),
       closeModalBtn: document.querySelector('.modal__close-btn-js'),
     };
-
+    console.log(localStorage);
+    console.log(isUserLogged);
     refs.removeBlock.classList.add('is-hidden');
+refs.addBtn.classList.add('is-hidden');
+    if (isUserLogged) {
+      refs.addBtn.classList.remove('is-hidden');
+    } 
 
-    if (!IsUserLogged) {
-      refs.addBtn.classList.add('is-hidden');
-    } else { refs.addBtn.classList.remove('is-hidden')}
-
-    const isBookInStorage = bookArray.find(book => { book._id === bookData._id; console.log(book);console.log(book._id) });
+    const isBookInStorage = bookArray.find(book => book._id === bookData._id);
     const bookIndex = bookArray.indexOf(isBookInStorage);
 
-    if (isBookInStorage && IsUserLogged) {
+    if (isBookInStorage && isUserLogged) {
       refs.addBtn.classList.add('is-hidden');
       refs.removeBlock.classList.remove('is-hidden');
     }
@@ -125,18 +126,14 @@ console.log(bookData);
 
     function handleAddBtnClick() {
       bookArray.push(bookData);
-
       localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
-      writeUserData(bookArray); //Write user shopping list to DB
       refs.addBtn.classList.add('is-hidden');
       refs.removeBlock.classList.remove('is-hidden');
     }
 
     function handleRemoveBtnClick() {
       bookArray.splice(bookIndex, 1);
-      writeUserData(bookArray); //Write user shopping list to DB
       localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
-
       refs.addBtn.classList.remove('is-hidden');
       refs.removeBlock.classList.add('is-hidden');
     }
