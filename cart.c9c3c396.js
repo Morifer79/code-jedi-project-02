@@ -22,7 +22,7 @@ let e,t,i,n,r;function o(e,t,i,n){Object.defineProperty(e,t,{get:i,set:n,enumera
     </div>`).join("");return t}(e))).catch(()=>ep(ij).Notify.failure("Failed to load books. Please try again later."))}iQ.classList.remove("hide"),i0();const i1=document.querySelector(".category-link"),i2={all:"https://books-backend.p.goit.global/books/category-list",top:"https://books-backend.p.goit.global/books/top-books",category:"https://books-backend.p.goit.global/books/category?category=",bookId:"https://books-backend.p.goit.global/books/"};async function i5(e,t=""){let i=await ix.get(`${i2[e]}${t}`);return i.data}function i3(e){let t=e.split(" "),i=t.pop(),n=t.join(" "),r=`<h1 class="hero-title animate-bottom">${n} <span class="hero-title-accent">${i}</span>
 </h1>`;ix.get(`https://books-backend.p.goit.global/books/category?category=${e}`).then(e=>e.data).then(t=>{if(t.length>0){let e=`<ul class="home-category-cards category-books home-container.container animate-bottom">
             ${t.map(e=>`
-    <div class="book-card">
+    <div class="book-card stretchRight" id="${e._id}">
     <div class="home-card-wrap">
     <img src="${e.book_image}" alt="${e.title} class="book-image" loading="lazy" width="335">
     <p class="home-card-overlay">quick view</p>
@@ -44,4 +44,4 @@ let e,t,i,n,r;function o(e,t,i,n){Object.defineProperty(e,t,{get:i,set:n,enumera
     />
   </a>
 </li>`,oV=or.map((e,t)=>oG(e,oX(t+1))).join("");oU.innerHTML=oV;const oq=new oF(".my-swiper",{direction:"vertical",slidesPerView:"auto",navigation:{nextEl:".swiper-button-down",prevEl:".swiper-button-top"},plugins:{scrollContainer:!0}});
-//# sourceMappingURL=cart.002487ad.js.map
+//# sourceMappingURL=cart.c9c3c396.js.map
