@@ -11,7 +11,6 @@ import medecinsSansFrontiers_2x from '../images/frontiers_x2.png';
 import razom from '../images/04.png';
 import razom_2x from '../images/razom_x2.png';
 import actionAgainstHunger from '../images/05.png';
-import actionAgainstHunger_2x from '../images/hanger_x2.png';
 import worldVision from '../images/09.png';
 import worldVision_2x from '../images/vision_x2.png';
 import sergiyPrytula from '../images/06.png';
@@ -58,7 +57,6 @@ export const supportArr = [
     title: 'Action Against Hunger',
     url: 'https://www.actionagainsthunger.org/',
     img: actionAgainstHunger,
-    img2x: actionAgainstHunger_2x,
   },
   {
     title: 'World Vision',
