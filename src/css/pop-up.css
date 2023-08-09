@@ -38,9 +38,13 @@
     visibility: 0;
 }
 
+.modal-open {
+    overflow: hidden;
+}
+
 /*-----------MOBILE---------*/
 
-@media screen and (min-width: 375px) {
+@media screen and (max-width: 375px) {
     .modal {
     max-height: calc(100% - 20px * 2);
     overflow-y: scroll;
@@ -208,20 +212,21 @@
         height: 24px;
     }
 
-    .modal_wrapper {
+    .modal__wrapper {
         display: flex;
+        flex-direction: row;
         gap: 24px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
 
     .modal__img {
         width: 192px;
         height: 281px;
-        margin-bottom: 0;
     }
 
     .modal-content {
         width: 280px;
+
     }
 
     .modal__title {
