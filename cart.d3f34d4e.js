@@ -1,2 +1,0 @@
-const e={LIGHT:"light-theme",DARK:"dark-theme"},t=document.body,s=document.querySelector(".theme-switch");s.addEventListener("change",function(s){s.currentTarget.checked?(t.classList.add(e.DARK),t.classList.remove(e.LIGHT),localStorage.setItem("theme",e.DARK)):(t.classList.add(e.LIGHT),t.classList.remove(e.DARK),localStorage.setItem("theme",e.LIGHT))}),function(){let c=localStorage.getItem("theme");c?t.classList.add(c):t.classList.add(e.LIGHT),c===e.DARK&&(s.checked=!0)}();
-//# sourceMappingURL=cart.d3f34d4e.js.map
