@@ -40,13 +40,13 @@ const addLeadingZero = value => {
 };
 
 const markupCard = (
-  { title, url, img },
+  { title, url, img, img2x },
   position
 ) => `<li class="support-list__item swiper-slide">
   <p class="support-number">${position}</p>
   <a class="support-list__link" href="${url}" target="_blank" rel="noopener noreferrer nofollow">
     <img
-    srcset="${img}"
+    srcset="${img} 1x, ${img2x} 2x"
       src="${img}"
       alt="${title}"
       loading="lazy"
