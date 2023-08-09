@@ -1,2 +1,0 @@
-const e=document.querySelectorAll(".js-img-switcher");function t(t){let l=`/css/theme-${t}.css`;document.querySelector('[title="theme"]').setAttribute("href",l),e.forEach(e=>{e.style.display="block"}),document.querySelector(`[data-theme="${t}"]`).style.display="none"}e.forEach(e=>{e.addEventListener("click",function(){let e=this.dataset.theme;t(e),localStorage.setItem("theme",e)})});let l=localStorage.getItem("theme");null===l||"light"===l?t("light"):t("dark");
-//# sourceMappingURL=cart.9170c3db.js.map
