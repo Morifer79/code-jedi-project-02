@@ -58,7 +58,6 @@ function handleAuthFormSubmit(e) {
     };
     const serializedUserData = JSON.stringify(userData);
     localStorage.setItem('userData', serializedUserData);
-    console.log('Registration successful!');
     Notiflix.Notify.success('Registration successful!');
     setTimeout(() => {
       toggleModal();
@@ -75,7 +74,6 @@ function handleAuthFormSubmit(e) {
         parsedUserData.email === userEmail &&
         parsedUserData.password === userPassword
       ) {
-        console.log('Authorization successful!');
         Notiflix.Notify.success('Authorization successful!');
         setTimeout(() => {
           toggleModal();
@@ -84,7 +82,6 @@ function handleAuthFormSubmit(e) {
         }, 2000);
         e.target.reset();
       } else {
-        console.log('User not registered. Please register!');
         Notiflix.Notify.error('User is not registered! Please register!');
         refs.signUpBtn.textContent = 'SIGN UP';
       }
