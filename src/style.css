@@ -13,67 +13,67 @@
 @import url('./css/loader.css');
 
 :root {
-	--font-family: 'DM Sans', sans-serif;
-	--black: #111111;
-	--black-1: #202024;
-	--violet: #4F2EE8;
-	--yellow: #EAC645;
-	--white: #FFF;
-	--grey: #B4AFAF;
+  --font-family: 'DM Sans', sans-serif;
+  --black: #111111;
+  --black-1: #202024;
+  --violet: #4f2ee8;
+  --yellow: #eac645;
+  --white: #fff;
+  --grey: #b4afaf;
 
-	--light-bg: #F6F6F6;
-	--transition: 250ms linear;
+  --light-bg: #f6f6f6;
+  --transition: 250ms linear;
 }
 
 body {
-	font-family: var(--font-family);
-	font-size: 18px;
-	font-weight: 700;
-	background-color: var(--light-bg);
-	color: var(--black);
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 700;
+  background-color: var(--light-bg);
+  color: var(--black);
 }
 
 .container {
-	margin: 0 auto;
-	padding: 0 20px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .visually-hidden {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	white-space: nowrap;
-	clip-path: inset(100%);
-	clip: rect(0 0 0 0);
-	overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 @media screen and (min-width: 375px) {
-	.container {
-		width: 375px;
-		padding: 0 20px;
-	}
+  .container {
+    width: 375px;
+    padding: 0 20px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-	.container {
-		width: 768px;
-		padding: 0 32px;
-	}
+  .container {
+    width: 768px;
+    padding: 0 32px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-	.container {
-		width: 1440px;
-		padding: 0 24px;
-	}
+  .container {
+    width: 1440px;
+    padding: 0 24px;
+  }
 }

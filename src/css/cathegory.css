@@ -4,14 +4,14 @@
     flex-wrap: wrap;
     justify-content: space-between;
   }
-  .book-card { 
+  .book-card {
     display: inline-block;
     max-width: 335px;
     margin-bottom: 40px;
   }
-	.book-card img{
-		border-radius: 8px;
-	}
+  .book-card img {
+    border-radius: 8px;
+  }
 
   .book-title {
     color: var(--black);
@@ -40,115 +40,166 @@
   .animated {
     animation-duration: 1s;
   }
-  
+
   .animate-fadeInUp {
     animation-name: fadeInUp;
   }
-
-  
 }
-  
-  @media screen and (min-width: 768px) {
-    .category-books {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      flex-basis: calc((100% - 50) / 3);
-    }
 
-    .book-card {
-      max-width: 216px;
-      margin-bottom: 0;
-    }
-
-    .book-card img {
-      max-width: 218px;
-      height: 316px;
-    }
-
-    .book-title {
-      color: var(--black);
-      font-size: 16px;
-      line-height: 1.13;
-      letter-spacing: -0.64px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-      margin-top: 14px;
-      transition: text-shadow var(--transition);
-    }
-  
-    .book-author {
-      color: var(--grey);
-      font-size: 12px;
-      font-style: italic;
-      font-weight: 400;
-      line-height: 1.17;
-      letter-spacing: -0.48px;
-    }
-  
-    .book-card:is(:hover, :focus) .book-title {
-      text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    }
-
-    .stretchRight{ animation-name: stretchRight; -webkit-animation-name: stretchRight; animation-duration: 1.5s; -webkit-animation-duration: 1.5s; animation-timing-function: ease-out; -webkit-animation-timing-function: ease-out; transform-origin: 0% 0%; -ms-transform-origin: 0% 0%; -webkit-transform-origin: 0% 0%; } @keyframes stretchRight { 0% { transform: scaleX(0.3); } 40% { transform: scaleX(1.02); } 60% { transform: scaleX(0.98); } 80% { transform: scaleX(1.01); } 100% { transform: scaleX(0.98); } 80% { transform: scaleX(1.01); } 100% { transform: scaleX(1); } } @-webkit-keyframes stretchRight { 0% { -webkit-transform: scaleX(0.3); } 40% { -webkit-transform: scaleX(1.02); } 60% { -webkit-transform: scaleX(0.98); } 80% { -webkit-transform: scaleX(1.01); } 100% { -webkit-transform: scaleX(0.98); } 80% { -webkit-transform: scaleX(1.01); } 100% { -webkit-transform: scaleX(1); } }
+@media screen and (min-width: 768px) {
+  .category-books {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-basis: calc((100% - 50) / 3);
   }
 
-  @media screen and (min-width: 1440px) {
-    .category-books {
-      max-width: 996px;
-      display: flex;
-      flex-basis: calc((100% - 96) / 5);
-      margin-left: auto;
-    
-    }
-    .book-image{
-      margin-bottom: 14px;
-    }
-
-    .book-card {
-      max-width: 180px;
-      margin-bottom: 0px;
-			cursor: pointer;
-    }
-
-    .book-card img {
-      max-width: 180px;
-      height: 256px;
-    }
-
-      .book-card:first-child {
-      display: block;
-    }
-
-   
-
-    .home-card-wrap {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-    }
-    .home-card-overlay {
-      display: block;
-      position: absolute;
-      top: 187px;
-      left: 0;
-      width: 180px;
-      height: 70px;
-      background-color: var(--yellow);
-      border-radius: 0px 0px 8px 8px;
-      padding: 26px 52px;
-      color: var(--light-background);
-      transform: translateY(100%);
-      transition: transform var(--transition);
-      color: var(--black);
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.29;
-      letter-spacing: -0.56px;
-      text-transform: uppercase;
-    }
-    
-    .book-card:is(:hover, :focus) .home-card-overlay {
-      transform: translateY(0%);
+  .book-card {
+    max-width: 216px;
+    margin-bottom: 0;
   }
+
+  .book-card img {
+    max-width: 218px;
+    height: 316px;
   }
+
+  .book-title {
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.13;
+    letter-spacing: -0.64px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    margin-top: 14px;
+    transition: text-shadow var(--transition);
+  }
+
+  .book-author {
+    color: var(--grey);
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.17;
+    letter-spacing: -0.48px;
+  }
+
+  .book-card:is(:hover, :focus) .book-title {
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .stretchRight {
+    animation-name: stretchRight;
+    -webkit-animation-name: stretchRight;
+    animation-duration: 1.5s;
+    -webkit-animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
+    transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -webkit-transform-origin: 0% 0%;
+  }
+  @keyframes stretchRight {
+    0% {
+      transform: scaleX(0.3);
+    }
+    40% {
+      transform: scaleX(1.02);
+    }
+    60% {
+      transform: scaleX(0.98);
+    }
+    80% {
+      transform: scaleX(1.01);
+    }
+    100% {
+      transform: scaleX(0.98);
+    }
+    80% {
+      transform: scaleX(1.01);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  @-webkit-keyframes stretchRight {
+    0% {
+      -webkit-transform: scaleX(0.3);
+    }
+    40% {
+      -webkit-transform: scaleX(1.02);
+    }
+    60% {
+      -webkit-transform: scaleX(0.98);
+    }
+    80% {
+      -webkit-transform: scaleX(1.01);
+    }
+    100% {
+      -webkit-transform: scaleX(0.98);
+    }
+    80% {
+      -webkit-transform: scaleX(1.01);
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .category-books {
+    max-width: 996px;
+    display: flex;
+    flex-basis: calc((100% - 96) / 5);
+    margin-left: auto;
+  }
+  .book-image {
+    margin-bottom: 14px;
+  }
+
+  .book-card {
+    max-width: 180px;
+    margin-bottom: 0px;
+    cursor: pointer;
+  }
+
+  .book-card img {
+    max-width: 180px;
+    height: 256px;
+  }
+
+  .book-card:first-child {
+    display: block;
+  }
+
+  .home-card-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  .home-card-overlay {
+    display: block;
+    position: absolute;
+    top: 187px;
+    left: 0;
+    width: 180px;
+    height: 70px;
+    background-color: var(--yellow);
+    border-radius: 0px 0px 8px 8px;
+    padding: 26px 52px;
+    color: var(--light-background);
+    transform: translateY(100%);
+    transition: transform var(--transition);
+    color: var(--black);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.29;
+    letter-spacing: -0.56px;
+    text-transform: uppercase;
+  }
+
+  .book-card:is(:hover, :focus) .home-card-overlay {
+    transform: translateY(0%);
+  }
+}

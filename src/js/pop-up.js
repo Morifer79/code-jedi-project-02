@@ -44,29 +44,26 @@ if (currentStorage) {
   localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify([]));
 }
 container.addEventListener('click', handleBookClick);
-    
-    function handleBookClick(event) {
-      if (
-        event.target.closest('.home-card') ||
-        event.target.closest('.book-card')
-      ) {
-        event.preventDefault();
-        const liEl =
-          event.target.closest('.home-card') ||
-          event.target.closest('.book-card');
-        id = liEl.id;
-        handleModalWindow(id);
-      }
-    }
+
+function handleBookClick(event) {
+  if (
+    event.target.closest('.home-card') ||
+    event.target.closest('.book-card')
+  ) {
+    event.preventDefault();
+    const liEl =
+      event.target.closest('.home-card') || event.target.closest('.book-card');
+    id = liEl.id;
+    handleModalWindow(id);
+  }
+}
 export async function handleModalWindow(bookId) {
   spiner.show();
   try {
     const bookData = await getBookInfo(bookId);
     const isUserLogged = JSON.parse(localStorage.getItem(USER_DATA_KEY));
 
-    let amazonUrl = bookData.buy_links.find(
-      book => book.name === 'Amazon'
-    ).url;
+    let amazonUrl = bookData.buy_links.find(book => book.name === 'Amazon').url;
     let appleBooksUrl = bookData.buy_links.find(
       book => book.name === 'Apple Books'
     ).url;
@@ -97,10 +94,10 @@ export async function handleModalWindow(bookId) {
     console.log(localStorage);
     console.log(isUserLogged);
     refs.removeBlock.classList.add('is-hidden');
-refs.addBtn.classList.add('is-hidden');
+    refs.addBtn.classList.add('is-hidden');
     if (isUserLogged) {
       refs.addBtn.classList.remove('is-hidden');
-    } 
+    }
 
     const isBookInStorage = bookArray.find(book => book._id === bookData._id);
     const bookIndex = bookArray.indexOf(isBookInStorage);
@@ -115,7 +112,6 @@ refs.addBtn.classList.add('is-hidden');
     refs.addBtn.addEventListener('click', handleAddBtnClick);
     refs.removeBtn.addEventListener('click', handleRemoveBtnClick);
     refs.closeModalBtn.addEventListener('click', handleCloseModalBtnClick);
-    
 
     function handleCloseModalBtnClick() {
       closeModal();
