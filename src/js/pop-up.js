@@ -23,6 +23,13 @@ const globalRefs = {
   modal: document.querySelector('.modal-js'),
 };
 
+const refs = {
+  addBtn: document.querySelector('.modal__add-btn-js'),
+  removeBlock: document.querySelector('.modal__remove-block-js'),
+  removeBtn: document.querySelector('.modal__remove-btn-js'),
+  closeModalBtn: document.querySelector('.modal__close-btn-js'),
+};
+
 const BOOKS_DATA_KEY = 'books-data';
 const USER_DATA_KEY = 'user-data';
 const bookArray = [];
@@ -46,24 +53,26 @@ if (currentStorage) {
 container.addEventListener('click', handleBookClick);
     
 function handleBookClick(event) {
-	if (
-		event.target.closest('.home-card') ||
-			event.target.closest('.book-card')
-	) {
-		event.preventDefault();
-		const liEl =
-			event.target.closest('.home-card') ||
-			event.target.closest('.book-card');
-		const id = liEl.id;
-		handleModalWindow(id);
-	}
+  if (
+    event.target.closest('.home-card') ||
+    event.target.closest('.book-card')
+  ) {
+    event.preventDefault();
+    const liEl =
+      event.target.closest('.home-card') ||
+      event.target.closest('.book-card');
+    const id = liEl.id;
+    console.log(`Opening modal for book with ID: ${id}`);
+    handleModalWindow(id);
+  }
 }
 export async function handleModalWindow(bookId) {
+  console.log(`Opening modal for book with ID: ${bookId}`);
   spiner.show();
   try {
     const bookData = await getBookInfo(bookId);
     const IsUserLogged = JSON.parse(localStorage.getItem(USER_DATA_KEY));
-console.log(bookData);
+
     let amazonUrl = bookData.buy_links.find(
       book => book.name === 'Amazon'
     ).url;
@@ -74,7 +83,11 @@ console.log(bookData);
       book => book.name === 'Barnes and Noble'
     ).url;
 
+    const isBookInStorage = bookArray.find(book => book._id === bookData._id);
+    const bookIndex = bookArray.indexOf(isBookInStorage);
+
     globalRefs.modal.classList.remove('is-hidden');
+    console.log(`Modal opened for book with ID: ${bookId}`);
     globalRefs.backdrop.classList.remove('is-hidden');
     document.body.classList.add('modal-open');
 
@@ -88,26 +101,28 @@ console.log(bookData);
 
     spiner.hide();
 
-    const refs = {
-      addBtn: document.querySelector('.modal__add-btn-js'),
-      removeBlock: document.querySelector('.modal__remove-block-js'),
-      removeBtn: document.querySelector('.modal__remove-btn-js'),
-      closeModalBtn: document.querySelector('.modal__close-btn-js'),
-    };
+   
 
     refs.removeBlock.classList.add('is-hidden');
 
     if (!IsUserLogged) {
       refs.addBtn.classList.add('is-hidden');
-    } else { refs.addBtn.classList.remove('is-hidden')}
-
-    const isBookInStorage = bookArray.find(book => { book._id === bookData._id; console.log(book);console.log(book._id) });
-    const bookIndex = bookArray.indexOf(isBookInStorage);
-
-    if (isBookInStorage && IsUserLogged) {
-      refs.addBtn.classList.add('is-hidden');
-      refs.removeBlock.classList.remove('is-hidden');
+    } else {
+      if (isBookInStorage) {
+        refs.addBtn.textContent = 'Remove from the shopping list';
+        refs.removeBlock.classList.remove('is-hidden');
+      } else {
+        refs.addBtn.textContent = 'Add to shopping list';
+      }
+      refs.addBtn.classList.remove('is-hidden');
     }
+    
+if (isBookInStorage && IsUserLogged) {
+  refs.addBtn.classList.add('is-hidden');
+  refs.removeBlock.classList.remove('is-hidden');
+}
+      
+   
 
     window.addEventListener('keydown', handleEscKeyPress);
     window.addEventListener('click', handleBackDropClick);
@@ -124,20 +139,22 @@ console.log(bookData);
     }
 
     function handleAddBtnClick() {
-      bookArray.push(bookData);
-
-      localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
-      writeUserData(bookArray); //Write user shopping list to DB
-      refs.addBtn.classList.add('is-hidden');
-      refs.removeBlock.classList.remove('is-hidden');
+      if (!isBookInStorage) {
+        bookArray.push(bookData);
+        localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+        writeUserData(bookArray); 
+        refs.addBtn.textContent = 'Remove from the shopping list';
+        refs.removeBlock.classList.remove('is-hidden');
+      } else {
+        handleRemoveBtnClick();
+      }
     }
 
     function handleRemoveBtnClick() {
       bookArray.splice(bookIndex, 1);
-      writeUserData(bookArray); //Write user shopping list to DB
+      writeUserData(bookArray); 
       localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
-
-      refs.addBtn.classList.remove('is-hidden');
+      refs.addBtn.textContent = 'Add to shopping list';
       refs.removeBlock.classList.add('is-hidden');
     }
 
