@@ -15,8 +15,8 @@ let openModStDisplay = "";
 window.addEventListener('resize', (e) => {
  if (e.target.innerWidth > 767) {
 	
-	 refss.singUpBtn.style.display = "flex"
-	 refss.singUpBtnTab.style.display = "none"
+	 refss.singUpBtn.style.display = "flex";
+	 refss.singUpBtnTab.style.display = "none";
 	 
 
 	refss.openModalBtnMenu.style.display = "none";
@@ -24,10 +24,10 @@ window.addEventListener('resize', (e) => {
 }
 else {
 	
-	refss.openModalBtnMenu.style.display=openModStDisplay
-	 refss.closeModalBtnMenu.style.display = closModStDisplay
-	refss.singUpBtnTab.style.display="flex"
-	refss.singUpBtn.style.display = "none"
+	 refss.openModalBtnMenu.style.display = openModStDisplay;
+	 refss.closeModalBtnMenu.style.display = closModStDisplay;
+	 refss.singUpBtnTab.style.display = "flex";
+	 refss.singUpBtn.style.display = "none";
 }
 });
 
@@ -40,36 +40,23 @@ refss.closeModalBtnMenu.addEventListener('click', toggleModalMenu);
 	function toggleModalMenu() {
 		refss.modalMenu.classList.toggle('is-hidden');
 		if (!refss.modalMenu.classList.contains('is-hidden')) {
-	refss.singUpBtnTab.style.display="flex"
+			refss.singUpBtnTab.style.display = "flex";
 	refss.openModalBtnMenu.style.display = "none";
-	openModStDisplay="none"
+			openModStDisplay = "none";
 	
-	refss.closeModalBtnMenu.style.display = "block"
-closModStDisplay="block"
+			refss.closeModalBtnMenu.style.display = "block";
+			closModStDisplay = "block";
 	
 	document.body.style.overflow = 'hidden';
 } else {
 	refss.openModalBtnMenu.style.display = "block";
-	 openModStDisplay="block"
+			openModStDisplay = "block";
 	refss.closeModalBtnMenu.style.display = "none";
 			closModStDisplay = "none";
-			refss.singUpBtn.style.display="none"
-	// refss.singUpBtn.style.display = "none"
+			refss.singUpBtn.style.display = "none";
 	document.body.style.overflow = '';
 		}
 		
 		
 	 
 };
-
-// if (!document.querySelector(".mobe-menu-close")) {
-//   refss.openModalBtnMenu.classList.add('helper')
-// }
-// else{
-// refss.openModalBtnMenu.classList.remove('helper')
-// }
-// if (refss.pageWidth > 700) {
-//   console.log("ok");
-//const pageWidth = document.documentElement.scrollWidth
-// }
-//  console.log(refss.pageWidth);

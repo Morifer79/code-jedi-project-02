@@ -1,7 +1,7 @@
 import { getSeparateCategories } from './api';
 import { container } from './home.js';
-import { categoriesList } from './allCategories-render'
-import { loader } from './home.js';
+import { categoriesList } from './allCategories-render';
+import { loader } from './loader.js';
 import { homeRender } from './home.js';
 
 categoriesList.addEventListener('click', function (event) {
@@ -34,10 +34,10 @@ container.addEventListener('click', function (event) {
 });
 
 function loadBooksByCategory(category) {
-  const words = category.split(" ");
-  const lastWord = words.pop(); 
-  const firstWords = words.join(" ");
-const categoryTitle = `<h1 class="hero-title animate-bottom">${firstWords} <span class="hero-title-accent">${lastWord}</span>
+  const words = category.split(' ');
+  const lastWord = words.pop();
+  const firstWords = words.join(' ');
+  const categoryTitle = `<h1 class="hero-title animate-bottom">${firstWords} <span class="hero-title-accent">${lastWord}</span>
 </h1>`;
 
   getSeparateCategories(category)
@@ -46,9 +46,8 @@ const categoryTitle = `<h1 class="hero-title animate-bottom">${firstWords} <span
         const booksMarkup = `<ul class="home-category-cards category-books home-container.container animate-bottom">
             ${response.map(book => createMarkup(book)).join('')}
           </ul>`;
-          ;
         loader.classList.add('hide');
-       return container.innerHTML = categoryTitle + booksMarkup;
+        return (container.innerHTML = categoryTitle + booksMarkup);
       } else {
         container.innerHTML = `<p>No found books in category "${category}".</p>`;
       }

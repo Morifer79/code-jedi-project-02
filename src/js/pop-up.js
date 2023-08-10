@@ -31,12 +31,12 @@ const refs = {
 };
 
 const BOOKS_DATA_KEY = 'books-data';
-const USER_DATA_KEY = 'user-data';
+const USER_DATA_KEY = 'userData';
 const bookArray = [];
-const currentStorage = JSON.parse(localStorage.getItem(BOOKS_DATA_KEY));
+const currentStorage = JSON.parse(sessionStorage.getItem(BOOKS_DATA_KEY));
 const spiner = new Spiner();
 
-const imgSrcs = {
+export let imgSrcs = {
   amazonSrcX1: require('../images/modal/image-1@1x.png'),
   amazonSrcX2: require('../images/modal/image-1@2x.png'),
   appleBooksSrcX1: require('../images/modal/image-2@1x.png'),
@@ -48,30 +48,29 @@ const imgSrcs = {
 if (currentStorage) {
   bookArray.push(...currentStorage);
 } else {
-  localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify([]));
+  sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify([]));
 }
 container.addEventListener('click', handleBookClick);
     
-function handleBookClick(event) {
-  if (
-    event.target.closest('.home-card') ||
-    event.target.closest('.book-card')
-  ) {
-    event.preventDefault();
-    const liEl =
-      event.target.closest('.home-card') ||
-      event.target.closest('.book-card');
-    const id = liEl.id;
-    console.log(`Opening modal for book with ID: ${id}`);
-    handleModalWindow(id);
-  }
-}
+    function handleBookClick(event) {
+      if (
+        event.target.closest('.home-card') ||
+        event.target.closest('.book-card')
+      ) {
+        event.preventDefault();
+        const liEl =
+          event.target.closest('.home-card') ||
+          event.target.closest('.book-card');
+        const id = liEl.id;
+        handleModalWindow(id);
+      }
+    }
 export async function handleModalWindow(bookId) {
   console.log(`Opening modal for book with ID: ${bookId}`);
   spiner.show();
   try {
     const bookData = await getBookInfo(bookId);
-    const IsUserLogged = JSON.parse(localStorage.getItem(USER_DATA_KEY));
+    const isUserLogged = JSON.parse(sessionStorage.getItem(USER_DATA_KEY));
 
     let amazonUrl = bookData.buy_links.find(
       book => book.name === 'Amazon'
@@ -104,17 +103,16 @@ export async function handleModalWindow(bookId) {
    
 
     refs.removeBlock.classList.add('is-hidden');
-
-    if (!IsUserLogged) {
-      refs.addBtn.classList.add('is-hidden');
-    } else {
-      if (isBookInStorage) {
-        refs.addBtn.textContent = 'Remove from the shopping list';
-        refs.removeBlock.classList.remove('is-hidden');
-      } else {
-        refs.addBtn.textContent = 'Add to shopping list';
-      }
+refs.addBtn.classList.add('is-hidden');
+    if (isUserLogged) {
       refs.addBtn.classList.remove('is-hidden');
+    } 
+
+    
+
+    if (isBookInStorage && isUserLogged) {
+      refs.addBtn.classList.add('is-hidden');
+      refs.removeBlock.classList.remove('is-hidden');
     }
     
 if (isBookInStorage && IsUserLogged) {
@@ -139,22 +137,16 @@ if (isBookInStorage && IsUserLogged) {
     }
 
     function handleAddBtnClick() {
-      if (!isBookInStorage) {
-        bookArray.push(bookData);
-        localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
-        writeUserData(bookArray); 
-        refs.addBtn.textContent = 'Remove from the shopping list';
-        refs.removeBlock.classList.remove('is-hidden');
-      } else {
-        handleRemoveBtnClick();
-      }
+      bookArray.push(bookData);
+      sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+      refs.addBtn.classList.add('is-hidden');
+      refs.removeBlock.classList.remove('is-hidden');
     }
 
     function handleRemoveBtnClick() {
       bookArray.splice(bookIndex, 1);
-      writeUserData(bookArray); 
-      localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
-      refs.addBtn.textContent = 'Add to shopping list';
+      sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+      refs.addBtn.classList.remove('is-hidden');
       refs.removeBlock.classList.add('is-hidden');
     }
 

@@ -1,23 +1,23 @@
 .go-top {
-	position: fixed;
-	right: 20px;
-	top: 95%;
-	transform: translateY(-50%);
-	cursor: pointer;
-	display: none;
+  position: fixed;
+  right: 20px;
+  top: 95%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
 }
 
 .go-top--show {
-	display: block;
+  display: block;
 }
 
 .arrow {
-	border-radius: 50%;
-	width: 50px;
-	height: 50px;
-	transition: box-shadow var(--transition);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: box-shadow var(--transition);
 }
 
 .arrow:hover {
-	box-shadow: 0 0 5px 10px var(--yellow);
+  box-shadow: 0 0 5px 10px var(--yellow);
 }
