@@ -1,7 +1,7 @@
 import { getSeparateCategories } from './api';
 import { container } from './home.js';
 import { categoriesList } from './allCategories-render';
-import { loader } from './home.js';
+import { loader } from './loader.js';
 import { homeRender } from './home.js';
 
 categoriesList.addEventListener('click', function (event) {
