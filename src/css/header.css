@@ -17,16 +17,6 @@
 .heade-logo{
   display: flex;
 }
-
-.header-nav-icon{
-  transition: box-shadow var(--transition);
-}
-
-.header-nav-icon:is(:hover, :focus){
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-
 .btn-theme{
 background-color: inherit;
 border: none;
@@ -133,6 +123,18 @@ stroke: rgba(79, 46, 232, 1);
     gap: 16px;
   }
 
+  /* .btn-user.btn-user-help {
+    
+    height: 45px;
+    
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    position: static;
+  } */
+
   .btn-user-text {
     color: var(--white);
       font-size: 14px;
@@ -170,18 +172,21 @@ stroke: rgba(79, 46, 232, 1);
   .mobe-menu-close.helper{
     display: none;
   }
-
+  /* .mobe-menu-open{
+    display: none;
+  } */
   .header-link-home {
     width: 72px;
     height: 34px;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: var(--yellow);
-    border-radius: 36px; */
+    background-color: var(--yellow);
+    border-radius: 36px;
   }
 
   
+
   .header-page-home {
     color: var(--black);
     font-size: 14px;
@@ -251,10 +256,4 @@ stroke: rgba(79, 46, 232, 1);
   .header-list {
     gap: 24px;
   }
-}
-
-.active {
-  border-radius: 36px;
-  background: var(--yellow);
-  padding: 8px 16px;
 }

@@ -11,4 +11,3 @@ import './js/home.js';
 import './js/pop-up.js';
 import './js/support-list.js';
 import './js/support-render.js';
-import './js/loader.js';

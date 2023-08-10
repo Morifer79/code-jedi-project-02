@@ -1,4 +1,3 @@
-import { imgSrcs } from "./pop-up.js";
 const Theme = {
   DARK: 'dark-theme',
   LIGHT: 'light-theme',
@@ -14,33 +13,25 @@ currentTheme();
 btn.addEventListener('change', e => {
   body.classList.toggle(Theme.DARK);
   if (!e.currentTarget.checked) {
-    sessionStorage.setItem('theme', Theme.LIGHT);
+    localStorage.setItem('theme', Theme.LIGHT);
     logoDark.style.display = 'none';
     logoLight.style.display = 'inline-block';
-    imgSrcs.amazonSrcX1 = require('../images/modal/image-1@1x.png');
-    imgSrcs.amazonSrcX2 = require('../images/modal/image-1@2x.png');
   } else {
-    sessionStorage.setItem('theme', Theme.DARK);
-    imgSrcs.amazonSrcX1 = require('../images/modal/amazon-dark.png');
-    imgSrcs.amazonSrcX2 = require('../images/modal/amazon-dark2x.png');
+    localStorage.setItem('theme', Theme.DARK);
     logoLight.style.display = 'none';
     logoDark.style.display = 'inline-block';
   }
 });
 
 function currentTheme() {
-  const savedTheme = sessionStorage.getItem('theme');
+  const savedTheme = localStorage.getItem('theme');
   if (savedTheme === Theme.DARK) {
     body.classList.add(Theme.DARK);
     btn.checked = true;
-    imgSrcs.amazonSrcX1 = require('../images/modal/amazon-dark.png');
-    imgSrcs.amazonSrcX2 = require('../images/modal/amazon-dark2x.png');
     logoLight.style.display = 'none';
     logoDark.style.display = 'inline-block';
   } else {
     body.classList.remove(Theme.DARK);
     btn.checked = false;
-    imgSrcs.amazonSrcX1 = require('../images/modal/image-1@1x.png');
-    imgSrcs.amazonSrcX2 = require('../images/modal/image-1@2x.png');
   }
 }

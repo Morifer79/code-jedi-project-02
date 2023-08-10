@@ -26,10 +26,10 @@ const globalRefs = {
 const BOOKS_DATA_KEY = 'books-data';
 const USER_DATA_KEY = 'userData';
 const bookArray = [];
-const currentStorage = JSON.parse(sessionStorage.getItem(BOOKS_DATA_KEY));
+const currentStorage = JSON.parse(localStorage.getItem(BOOKS_DATA_KEY));
 const spiner = new Spiner();
 
-export let imgSrcs = {
+const imgSrcs = {
   amazonSrcX1: require('../images/modal/image-1@1x.png'),
   amazonSrcX2: require('../images/modal/image-1@2x.png'),
   appleBooksSrcX1: require('../images/modal/image-2@1x.png'),
@@ -41,32 +41,29 @@ export let imgSrcs = {
 if (currentStorage) {
   bookArray.push(...currentStorage);
 } else {
-  sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify([]));
+  localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify([]));
 }
 container.addEventListener('click', handleBookClick);
-    
-    function handleBookClick(event) {
-      if (
-        event.target.closest('.home-card') ||
-        event.target.closest('.book-card')
-      ) {
-        event.preventDefault();
-        const liEl =
-          event.target.closest('.home-card') ||
-          event.target.closest('.book-card');
-        const id = liEl.id;
-        handleModalWindow(id);
-      }
-    }
+
+function handleBookClick(event) {
+  if (
+    event.target.closest('.home-card') ||
+    event.target.closest('.book-card')
+  ) {
+    event.preventDefault();
+    const liEl =
+      event.target.closest('.home-card') || event.target.closest('.book-card');
+    const id = liEl.id;
+    handleModalWindow(id);
+  }
+}
 export async function handleModalWindow(bookId) {
   spiner.show();
   try {
     const bookData = await getBookInfo(bookId);
-    const isUserLogged = JSON.parse(sessionStorage.getItem(USER_DATA_KEY));
+    const isUserLogged = JSON.parse(localStorage.getItem(USER_DATA_KEY));
 
-    let amazonUrl = bookData.buy_links.find(
-      book => book.name === 'Amazon'
-    ).url;
+    let amazonUrl = bookData.buy_links.find(book => book.name === 'Amazon').url;
     let appleBooksUrl = bookData.buy_links.find(
       book => book.name === 'Apple Books'
     ).url;
@@ -94,12 +91,13 @@ export async function handleModalWindow(bookId) {
       removeBtn: document.querySelector('.modal__remove-btn-js'),
       closeModalBtn: document.querySelector('.modal__close-btn-js'),
     };
-
+    console.log(localStorage);
+    console.log(isUserLogged);
     refs.removeBlock.classList.add('is-hidden');
-refs.addBtn.classList.add('is-hidden');
+    refs.addBtn.classList.add('is-hidden');
     if (isUserLogged) {
       refs.addBtn.classList.remove('is-hidden');
-    } 
+    }
 
     const isBookInStorage = bookArray.find(book => book._id === bookData._id);
     const bookIndex = bookArray.indexOf(isBookInStorage);
@@ -114,7 +112,6 @@ refs.addBtn.classList.add('is-hidden');
     refs.addBtn.addEventListener('click', handleAddBtnClick);
     refs.removeBtn.addEventListener('click', handleRemoveBtnClick);
     refs.closeModalBtn.addEventListener('click', handleCloseModalBtnClick);
-    
 
     function handleCloseModalBtnClick() {
       closeModal();
@@ -125,14 +122,14 @@ refs.addBtn.classList.add('is-hidden');
 
     function handleAddBtnClick() {
       bookArray.push(bookData);
-      sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+      localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
       refs.addBtn.classList.add('is-hidden');
       refs.removeBlock.classList.remove('is-hidden');
     }
 
     function handleRemoveBtnClick() {
       bookArray.splice(bookIndex, 1);
-      sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+      localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
       refs.addBtn.classList.remove('is-hidden');
       refs.removeBlock.classList.add('is-hidden');
     }
