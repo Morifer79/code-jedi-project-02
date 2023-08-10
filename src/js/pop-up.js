@@ -53,7 +53,7 @@ function handleBookClick(event) {
     event.preventDefault();
     const liEl =
       event.target.closest('.home-card') || event.target.closest('.book-card');
-    id = liEl.id;
+    const id = liEl.id;
     handleModalWindow(id);
   }
 }
