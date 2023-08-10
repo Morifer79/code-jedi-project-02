@@ -1,11 +1,11 @@
 const elBtnUser = document.querySelector(".btn-user-help");
 
- const elBtnUserMob=document.querySelector(".btn-user-helper")
+const elBtnUserMob = document.querySelector(".btn-user-helper");
 
 import {userName} from './start.js';
 
 elBtnUser.addEventListener("click", handleClick);
-elBtnUserMob.addEventListener("click", handleClick)
+elBtnUserMob.addEventListener("click", handleClick);
 
 
 export function handleClick() {
@@ -29,7 +29,6 @@ export function handleClick() {
 const homeLink = document.querySelector('.header-page-home');
 const cartLink = document.querySelector('.header-page-shoping');
 const currentLocation = window.location.href;
-console.log(window.location.href);
 
 function changeStatusPage(href) {
   if (homeLink.getAttribute('href').includes(href) || !cartLink) {
