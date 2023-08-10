@@ -79,6 +79,7 @@
   text-transform: uppercase;
   align-self: flex-end;
   margin-bottom: 40px;
+	background: transparent;
   transition: text-shadow var(--transition);
 }
 .home-card-overlay {

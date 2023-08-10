@@ -1,34 +1,37 @@
 const Theme = {
-	LIGHT: 'light-theme',
 	DARK: 'dark-theme',
+	LIGHT: 'light-theme',
 }
 
 const body = document.body;
 const btn = document.querySelector('.js-theme-switch');
-btn.addEventListener('change', changeTheme);
+const logoLight = document.querySelector('.js-logo-light');
+const logoDark = document.querySelector('.js-logo-dark');
 
 currentTheme();
 
-function changeTheme(e){
+btn.addEventListener('change', (e) => {
+	body.classList.toggle(Theme.DARK);
 	if(!e.currentTarget.checked){
-		body.classList.add(Theme.LIGHT);
-		body.classList.remove(Theme.DARK);
-		localStorage.setItem('theme', Theme.LIGHT)
+		localStorage.setItem('theme', Theme.LIGHT);
+		logoDark.style.display = 'none';
+		logoLight.style.display = 'inline-block';
 	} else {
-		body.classList.add(Theme.DARK);
-		body.classList.remove(Theme.LIGHT);
-		localStorage.setItem('theme', Theme.DARK)
+		localStorage.setItem('theme', Theme.DARK);
+		logoLight.style.display = 'none';
+		logoDark.style.display = 'inline-block';
 	}
-}
+})
 
-function currentTheme(){
+function currentTheme() {
 	const savedTheme = localStorage.getItem('theme');
-	if(savedTheme){
-		body.classList.add(savedTheme);
-	} else {
-		body.classList.add(Theme.LIGHT);
-	}
 	if(savedTheme === Theme.DARK){
+		body.classList.add(Theme.DARK);
 		btn.checked = true;
+		logoLight.style.display = 'none';
+		logoDark.style.display = 'inline-block';
+	} else {
+		body.classList.remove(Theme.DARK);
+		btn.checked = false;
 	}
 }

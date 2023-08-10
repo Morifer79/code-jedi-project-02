@@ -3,87 +3,91 @@
 	color: var(--white);
 }
 
-body.dark-theme.categories .category-link:hover {
+.header{
+	background-color: var(--black);
+}
+
+.dark-theme.categories .category-link:hover {
   color: var(--yellow);
 }
 
-body.dark-theme.book-title {
+.dark-theme.book-title {
   color: var(--white);
 }
 
-body.dark-theme.hero-title {
+.dark-theme.hero-title {
   color: var(--white);
 }
 
-body.dark-theme.home-card-title {
+.dark-theme.home-card-title {
   color: var(--white);
 }
 
-body.dark-theme.home-category-btn {
+.dark-theme.home-category-btn {
   color: var(--white);
 }
 
-body.dark-theme.modal {
+.dark-theme.modal {
 	background: var(--black);
 	border: 2px solid var(--white);
 }
 
-body.dark-theme.modal__close-btn { 
+.dark-theme.modal__close-btn { 
 	color: var(--white);
 }
 
-body.dark-theme.mobe-menu-svg {
+.dark-theme.mobe-menu-svg {
   stroke: var(--white);
 }
 
-body.dark-theme.header-link-shoping-menu{
+.dark-theme.header-link-shoping-menu{
 	color: var(--black);
 }
 
-body.dark-theme.modal__add-btn:hover,
-body.dark-theme.modal__add-btn:focus,
-body.dark-theme.modal__remove-btn:hover,
-body.dark-theme.modal__remove-btn:focus {
+.dark-theme.modal__add-btn:hover,
+.dark-theme.modal__add-btn:focus,
+.dark-theme.modal__remove-btn:hover,
+.dark-theme.modal__remove-btn:focus {
 		color: var(--black-1);
 }
 
-body.dark-theme.modal-start {
+.dark-theme.modal-start {
   background-color: var(--black-1);
   border: 2px solid var(--white);
 }
 
-body.dark-theme.close-icon {
+.dark-theme.close-icon {
   stroke: var(--white);
 }
 
-body.dark-theme.authorization-input {
+.dark-theme.authorization-input {
   border: 2px solid var(--white);
 }
 
-body.dark-theme.svg-email,
-body.dark-theme.svg-password {
+.dark-theme.svg-email,
+.dark-theme.svg-password {
   stroke: var(--white);
 }
 
-body.dark-theme.signup-btn {
+.dark-theme.signup-btn {
   background-color: var(--white);
   color: var(--black);
 }
 
-body.dark-theme.signup-btn:hover,
-body.dark-theme.signup-btn:focus {
+.dark-theme.signup-btn:hover,
+.dark-theme.signup-btn:focus {
   background-color: var(--black);
   color: var(--white);
 }
 
-body.dark-theme.authorization-input::placeholder {
+.dark-theme.authorization-input::placeholder {
   color: var(--white);
 }
 
-body.dark-theme.allcategories-list__btn:hover {
+.dark-theme.allcategories-list__btn:hover {
 	color: var(--yellow);
 }
 
-body.dark-theme.allcategories-list__btn:focus {
+.dark-theme.allcategories-list__btn:focus {
 	color: var(--yellow);
 }
