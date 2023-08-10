@@ -69,16 +69,16 @@
         background: inherit;
         border: none;
         color: var(--black);
-        transition: color var(--transition);
-    }
-
-    .modal__close-btn:hover,
-    .modal__close-btn:focus {
-        color: var(--violet);
     }
 
     .modal__close-icon {
         fill: currentColor;
+				transition: color var(--transition);
+    }
+
+		.modal__close-icon:hover,
+    .modal__close-icon:focus {
+        color: var(--violet);
     }
 
     .modal__img {

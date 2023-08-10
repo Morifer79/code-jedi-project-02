@@ -41,12 +41,16 @@ body.dark-theme{
 	background-color: var(--black-1);
 	color: var(--white);
 }
+
 body.dark-theme .allcategories-list__btn {
   color: var(--white);
 }
+
 body.dark-theme .header {
   background-color: var(--black);
+	border-color: var(--white);
 }
+
 body.dark-theme .categories .category-link:hover {
   color: var(--yellow);
 }
@@ -69,7 +73,7 @@ body.dark-theme .home-category-btn {
 
 body.dark-theme .modal {
 	background: var(--black);
-	border: 2px solid var(--white);
+	border-color: var(--white);
 }
 
 body.dark-theme .modal__close-btn { 
@@ -78,6 +82,10 @@ body.dark-theme .modal__close-btn {
 
 body.dark-theme .mobe-menu-svg {
   stroke: var(--white);
+}
+
+body.dark-theme .mobe-menu-close{
+	background-color: transparent;
 }
 
 body.dark-theme .header-link-shoping-menu{
@@ -93,7 +101,7 @@ body.dark-theme .modal__remove-btn:focus {
 
 body.dark-theme .modal-start {
   background-color: var(--black-1);
-  border: 2px solid var(--white);
+  border-color: var(--white);
 }
 
 body.dark-theme .close-icon {
@@ -101,7 +109,9 @@ body.dark-theme .close-icon {
 }
 
 body.dark-theme .authorization-input {
-  border: 2px solid var(--white);
+	background-color: var(--black-1);
+  border-color: var(--white);
+	color: var(--white);
 }
 
 body.dark-theme .svg-email,
@@ -122,6 +132,10 @@ body.dark-theme .signup-btn:focus {
 
 body.dark-theme .authorization-input::placeholder {
   color: var(--white);
+}
+
+body.dark-theme .sign-in-link {
+  color: rgba(246, 246, 246, .5);
 }
 
 body.dark-theme .allcategories-list__btn:hover {
