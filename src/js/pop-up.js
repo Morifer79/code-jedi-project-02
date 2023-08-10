@@ -1,7 +1,6 @@
 import renderModal from '../templates/pop-up.hbs';
 import { getBookInfo } from './api.js';
 import { container } from './home.js';
-
 export class Spiner {
   bookSpinerEl = document.querySelector('.spiner-js');
 
@@ -26,10 +25,10 @@ const globalRefs = {
 const BOOKS_DATA_KEY = 'books-data';
 const USER_DATA_KEY = 'userData';
 const bookArray = [];
-const currentStorage = JSON.parse(localStorage.getItem(BOOKS_DATA_KEY));
+const currentStorage = JSON.parse(sessionStorage.getItem(BOOKS_DATA_KEY));
 const spiner = new Spiner();
 
-const imgSrcs = {
+export let imgSrcs = {
   amazonSrcX1: require('../images/modal/image-1@1x.png'),
   amazonSrcX2: require('../images/modal/image-1@2x.png'),
   appleBooksSrcX1: require('../images/modal/image-2@1x.png'),
@@ -41,9 +40,12 @@ const imgSrcs = {
 if (currentStorage) {
   bookArray.push(...currentStorage);
 } else {
-  localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify([]));
+  sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify([]));
 }
-container.addEventListener('click', handleBookClick);
+
+if (!window.location.href.includes('cart.html')) {
+  container.addEventListener('click', handleBookClick);
+}
 
 function handleBookClick(event) {
   if (
@@ -61,7 +63,7 @@ export async function handleModalWindow(bookId) {
   spiner.show();
   try {
     const bookData = await getBookInfo(bookId);
-    const isUserLogged = JSON.parse(localStorage.getItem(USER_DATA_KEY));
+    const isUserLogged = JSON.parse(sessionStorage.getItem(USER_DATA_KEY));
 
     let amazonUrl = bookData.buy_links.find(book => book.name === 'Amazon').url;
     let appleBooksUrl = bookData.buy_links.find(
@@ -91,8 +93,7 @@ export async function handleModalWindow(bookId) {
       removeBtn: document.querySelector('.modal__remove-btn-js'),
       closeModalBtn: document.querySelector('.modal__close-btn-js'),
     };
-    console.log(localStorage);
-    console.log(isUserLogged);
+
     refs.removeBlock.classList.add('is-hidden');
     refs.addBtn.classList.add('is-hidden');
     if (isUserLogged) {
@@ -122,14 +123,14 @@ export async function handleModalWindow(bookId) {
 
     function handleAddBtnClick() {
       bookArray.push(bookData);
-      localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+      sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
       refs.addBtn.classList.add('is-hidden');
       refs.removeBlock.classList.remove('is-hidden');
     }
 
     function handleRemoveBtnClick() {
       bookArray.splice(bookIndex, 1);
-      localStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+      sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
       refs.addBtn.classList.remove('is-hidden');
       refs.removeBlock.classList.add('is-hidden');
     }

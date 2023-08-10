@@ -1,15 +1,14 @@
 import Notiflix from 'notiflix';
 import { getTopBooks } from './api';
-
+import { loader } from './loader';
 export const container = document.querySelector('.js-home-markup');
-export const loader = document.querySelector('.loader');
-const title = `<h1 class="hero-title animate-bottom">Best Sellers <span class="hero-title-accent">Books</span></h1>`;
-function loaderView() {
-  loader.classList.remove('hide');
-}
-loaderView();
 
-homeRender();
+const title = `<h1 class="hero-title animate-bottom">Best Sellers <span class="hero-title-accent">Books</span>
+</h1>`;
+
+if (!window.location.href.includes('cart.html')) {
+  homeRender();
+}
 
 export function homeRender() {
   getTopBooks()

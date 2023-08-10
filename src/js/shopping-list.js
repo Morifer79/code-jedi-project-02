@@ -1,118 +1,67 @@
-// Перевірка підтримки localStorage
-function isLocalStorageSupported() {
-    try {
-        const testKey = 'test';
-        localStorage.setItem(testKey, testKey);
-        localStorage.removeItem(testKey);
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
-
-// Отримуємо дані з localStorage
-function getBooksFromStorage() {
-    if (isLocalStorageSupported()) {
-        const books = localStorage.getItem('books');
-        return books ? JSON.parse(books) : [];
-    }
-    return [];
-}
-
-// Зберігаємо дані у localStorage
-function saveBooksToStorage(books) {
-    if (isLocalStorageSupported()) {
-        localStorage.setItem('books', JSON.stringify(books));
-    }
-}
-
-// Функція для додавання книги до списку
-function addBookToList(title) {
-    const bookList = document.getElementById('bookList');
-    const listItem = document.createElement('li');
-    listItem.textContent = title;
-    bookList.appendChild(listItem);
-}
-
-// Функція для відображення повідомлення, якщо список порожній
-function showEmptyMessage() {
-    const bookList = document.getElementById('bookList');
-    const emptyMessage = document.createElement('p');
-    emptyMessage.textContent = 'This page is empty, add some books and proceed to order.';
-    bookList.appendChild(emptyMessage);
-}
-
-// Основна функція, яка викликається при завантаженні сторінки
-function main() {
-    const books = getBooksFromStorage();
-
-    if (books.length > 0) {
-        books.forEach((book) => addBookToList(book));
-    } else {
-        showEmptyMessage();
-    }
-}
-
-main();
-
-
+import { loader } from './loader.js';
+import { imgSrcs } from './pop-up.js';
 
 const BOOKS_DATA_KEY = 'books-data';
 const bookArray = JSON.parse(sessionStorage.getItem(BOOKS_DATA_KEY)) || [];
 
-const imgSrcs = {
-  amazonSrcX1: require('../images/modal/image-1@1x.png'),
-  amazonSrcX2: require('../images/modal/image-1@2x.png'),
-  appleBooksSrcX1: require('../images/modal/image-2@1x.png'),
-  appleBooksSrcX2: require('../images/modal/image-2@2x.png'),
-  barnesAndNobleSrcX1: require('../images/modal/image-3@1x.png'),
-  barnesAndNobleSrcX2: require('../images/modal/image-3@2x.png'),
-};
-
-const shoppingListContainer = document.querySelector('.shopping-list-container');
+const cartTitle = `<h2>Shopping <span class="">List</span></h2>`;
+const shoppingListContainer = document.querySelector(
+  '.shopping-list-container'
+);
 
 function renderShoppingList() {
-  
-  if (bookArray.length === 0) {
+  shoppingListContainer.innerHTML = '';
+  if (!bookArray.length) {
     const emptyMessage = document.createElement('p');
     emptyMessage.textContent = 'Ваш список покупок порожній.';
     shoppingListContainer.appendChild(emptyMessage);
-    return;
+    loader.classList.add('hide');
+		return;
   }
+  loader.classList.add('hide');
+  return (shoppingListContainer.innerHTML = createMarkupShop(bookArray));
+}
 
-  bookArray.forEach(book => {
-    const card = document.createElement('div');
-    card.className = 'shopping-list-card';
+if (window.location.href.includes('cart.html')) {
+  loader.classList.remove('hide');
+	renderShoppingList();
+	shoppingListContainer.addEventListener('click', event => {
+    if (event.target.classList.contains('shopping-list-card__remove-btn')) {
+      const bookIndex = bookArray.find(
+        el => el._id === event.target.getAttribute('id')
+      );
+      if (bookIndex !== -1) {
+        bookArray.splice(bookIndex, 1);
+        sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
+        renderShoppingList(bookArray);
+      }
+    }
+  });
+}
 
-    card.innerHTML = `
-      <img src="${imgSrcs[book.coverImageUrl]}" alt="${book.title}" class="shopping-list-card__image">
+function createMarkupShop(arr) {
+  const markup =
+    cartTitle +
+    arr
+      .map(
+        book => `
+    <div class="shopping-list-card">
+      <img src="${book.book_image}" alt="${book.title}" class="shopping-list-card__image">
       <h2 class="shopping-list-card__title">${book.title}</h2>
-      <p class="shopping-list-card__category">${book.category}</p>
+      <p class="shopping-list-card__category">${book.list_name}</p>
       <p class="shopping-list-card__description">${book.description}</p>
       <p class="shopping-list-card__author">Автор: ${book.author}</p>
       <div class="shopping-list-card__links">
         <ul>
-          ${book.buyLinks.map(link => `<li><a href="${link.url}" target="_blank">${link.name}</a></li>`).join('')}
+          <li><a href="${book.buy_links[0].url}" target="_blank"><img src="${imgSrcs.amazonSrcX1}" alt="${book.buy_links[0].name}" srcset="${imgSrcs.amazonSrcX1} 1x, ${imgSrcs.amazonSrcX2} 2x"></a></li>
+          <li><a href="${book.buy_links[1].url}" target="_blank"><img src="${imgSrcs.appleBooksSrcX1}" alt="${book.buy_links[1].name}" srcset="${imgSrcs.appleBooksSrcX1} 1x, ${imgSrcs.appleBooksSrcX2} 2x"></a></li>
+          <li><a href="${book.buy_links[2].url}" target="_blank"><img src="${imgSrcs.barnesAndNobleSrcX1}" alt="${book.buy_links[2].name}" srcset="${imgSrcs.barnesAndNobleSrcX1} 1x, ${imgSrcs.barnesAndNobleSrcX2} 2x"></a></li>
         </ul>
       </div>
-      <button class="shopping-list-card__remove-btn">Видалити зі списку</button>
-    `;
-
-    const removeBtn = card.querySelector('.shopping-list-card__remove-btn');
-    removeBtn.addEventListener('click', () => {
-      const bookIndex = bookArray.findIndex(item => item._id === book._id);
-      if (bookIndex !== -1) {
-        bookArray.splice(bookIndex, 1);
-        sessionStorage.setItem(BOOKS_DATA_KEY, JSON.stringify(bookArray));
-        renderShoppingList(); // Поновлюємо список після видалення
-      }
-    });
-
-    shoppingListContainer.appendChild(card);
-  });
+      <button class="shopping-list-card__remove-btn" id="${book._id}">Видалити зі списку</button>
+    </div>
+  `
+      )
+      .join('');
+  return markup;
 }
-
-// Викликаємо функцію для відмальовки списку при завантаженні сторінки
-document.addEventListener('DOMContentLoaded', () => {
-  renderShoppingList();
-});
