@@ -6,3 +6,4 @@ import './js/header.js';
 import './js/menu.js';
 import './js/support-list.js';
 import './js/support-render.js';
+import './js/loader.js';
