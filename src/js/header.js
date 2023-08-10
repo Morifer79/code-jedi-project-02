@@ -24,3 +24,18 @@ export function handleClick() {
     elBtnUserMob.style.pointerEvents = "none";
   }
 }
+
+
+const homeLink = document.querySelector('.header-page-home');
+const cartLink = document.querySelector('.header-page-shoping');
+const currentLocation = window.location.href;
+console.log(window.location.href);
+
+function changeStatusPage(href) {
+  if (homeLink.getAttribute('href').includes(href) || !cartLink) {
+    return homeLink.classList.add('active');
+  }
+return cartLink.classList.add('active');
+}
+
+changeStatusPage(currentLocation);

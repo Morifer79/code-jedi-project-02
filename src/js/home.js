@@ -1,6 +1,6 @@
 import Notiflix from 'notiflix';
 import { getTopBooks } from './api';
-
+import { loader } from './loader.js';
 export const container = document.querySelector('.js-home-markup');
 export const loader = document.querySelector('.loader');
 const title = `<h1 class="hero-title animate-bottom">Best Sellers <span class="hero-title-accent">Books</span>
@@ -11,6 +11,8 @@ function loaderView() {
 loaderView();
 
 homeRender();
+
+
 
 export function homeRender() {
   getTopBooks()

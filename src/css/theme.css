@@ -149,3 +149,15 @@ body.dark-theme .allcategories-list__btn:hover {
 body.dark-theme .allcategories-list__btn:focus {
   color: var(--yellow);
 }
+
+
+body.dark-theme .modal__link:hover,
+body.dark-theme .modal__link:focus {
+     box-shadow: 0px 3px 3px 0px rgba(255, 255, 255, 0.5);
+  }
+
+  body.dark-theme .sign-link:hover,
+  body.dark-theme .sign-link:focus {
+    text-shadow: 0px 3px 3px 0px rgba(255, 255, 255, 0.15);
+  }
+

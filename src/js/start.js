@@ -56,7 +56,7 @@ function handleAuthFormSubmit(e) {
       password: userPassword,
     };
     const serializedUserData = JSON.stringify(userData);
-    localStorage.setItem('userData', serializedUserData);
+    sessionStorage.setItem('userData', serializedUserData);
     Notiflix.Notify.success('Registration successful!');
     setTimeout(() => {
       toggleModal();
@@ -65,7 +65,7 @@ function handleAuthFormSubmit(e) {
     }, 2000);
     e.target.reset();
   } else {
-    const storedUserData = localStorage.getItem('userData');
+    const storedUserData = sessionStorage.getItem('userData');
     if (storedUserData) {
       const parsedUserData = JSON.parse(storedUserData);
       if (
