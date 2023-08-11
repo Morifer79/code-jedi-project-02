@@ -14,25 +14,28 @@
   background-color: var(--white);
 }
 
-.heade-logo{
+.heade-logo {
   display: flex;
 }
-.btn-theme{
-background-color: inherit;
-border: none;
-padding: 0;
+.btn-theme {
+  background-color: inherit;
+  border: none;
+  padding: 0;
 }
 
-.img-switcher-lith{
+.btn-user-menu-header {
+  display: none;
+}
+.img-switcher-lith {
   display: block;
 }
 
-.img-switcher-black{
+.img-switcher-black {
   display: none;
   /* display: block; */
 }
 
-.theme{
+.theme {
   display: flex;
 }
 
@@ -44,15 +47,14 @@ padding: 0;
   padding: 0;
 }
 
-.mobe-menu-open:hover svg{
-stroke: rgba(79, 46, 232, 1);
+.mobe-menu-open:hover svg {
+  stroke: rgba(79, 46, 232, 1);
 }
 .mobe-menu-open:focus svg {
   stroke: rgba(79, 46, 232, 1);
 }
 
-
-.mobe-menu-close:hover svg{
+.mobe-menu-close:hover svg {
   stroke: rgba(79, 46, 232, 1);
 }
 .mobe-menu-close:focus svg {
@@ -78,12 +80,11 @@ stroke: rgba(79, 46, 232, 1);
   display: none;
 }
 
-
-.container-rith-btn{
-  gap:14px
+.container-rith-btn {
+  gap: 14px;
 }
 
-.btn-user-help{
+.btn-user-help {
   display: none;
 }
 /* .btn-user {
@@ -96,25 +97,42 @@ stroke: rgba(79, 46, 232, 1);
 }
 
 @media screen and (min-width: 768px) {
+  .container-rith-btn {
+    position: relative;
+  }
+
+  .btn-user-menu-header {
+    background-color: var(--white);
+    /* width: 118px; */
+    height: 48px;
+    border-radius: 18px;
+    border: 1.5px solid var(--black);
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    position: absolute;
+    top: 50px;
+    left: 90px;
+    display: none;
+  }
 
   .btn-user-help {
-      display: flex;
+    display: flex;
 
-      
-        width: 184px;
-        height: 48px;
-        border-radius: 18px;
-        padding: 0 14px;
-         align-items: center;
-        
-      justify-content: space-between;
-        flex-shrink: 0;
-        border: 1.5px solid #111;
-      background-color: var(--violet)
+    width: 184px;
+    height: 48px;
+    border-radius: 18px;
+    padding: 0 14px;
+    align-items: center;
 
-    }
+    justify-content: space-between;
+    flex-shrink: 0;
+    border: 1.5px solid #111;
+    background-color: var(--violet);
+  }
   .header {
-   
     padding-top: 14px;
     padding-bottom: 13px;
   }
@@ -137,39 +155,35 @@ stroke: rgba(79, 46, 232, 1);
 
   .btn-user-text {
     color: var(--white);
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 500;
-      line-height:1.28;
-      letter-spacing: -0.56px;
-   
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.28;
+    letter-spacing: -0.56px;
   }
 
-
-  .iconUser{
-    fill: var(--white)
+  .iconUser {
+    fill: var(--white);
   }
 
-  .textuserName{
+  .textuserName {
     color: var(--white);
-     
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 1.28;
-      letter-spacing: -0.44px;
+
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.28;
+    letter-spacing: -0.44px;
   }
-  
 
   .mobe-menu-open {
     display: none;
   }
 
-  .mode-menu-close{
+  .mode-menu-close {
     display: none;
-    
   }
-  .mobe-menu-close.helper{
+  .mobe-menu-close.helper {
     display: none;
   }
   /* .mobe-menu-open{
@@ -185,29 +199,26 @@ stroke: rgba(79, 46, 232, 1);
     border-radius: 36px;
   }
 
-  
-
   .header-page-home {
     color: var(--black);
     font-size: 14px;
-    
+
     line-height: 1.28;
     letter-spacing: -0.56px;
     text-transform: uppercase;
   }
 
-  .header-page-home:focus{
+  .header-page-home:focus {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
   }
-  .header-page-home:hover{
+  .header-page-home:hover {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .header-link-shoping {
     padding: 7px 16px;
     justify-content: center;
-    
+
     align-items: flex-end;
     gap: 8px;
     background-color: inherit;
@@ -232,18 +243,18 @@ stroke: rgba(79, 46, 232, 1);
     text-transform: uppercase;
   }
 
-  .header-page-shop:focus{
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  .header-page-shop:focus {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-  .header-page-shop:hover{
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  .header-page-shop:hover {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .container-rith-btn {
     gap: 24px;
   }
 
-  .bakdrop-menu{
+  .bakdrop-menu {
     display: none;
   }
 }
