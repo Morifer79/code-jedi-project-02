@@ -23,7 +23,7 @@ let marcup = '';
 
 export function handleClick() {
   if (userName ?? undefined) {
-    userName = '';
+    userName === '';
     marcup = `<svg width="37" height="37">
                     <use href="./images/sprite.svg#user" class="iconUser" ></use>
                 </svg>
