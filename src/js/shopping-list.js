@@ -9,7 +9,7 @@ const shoppingListContainer = document.querySelector(
   '.shopping-list-container'
 );
 
-function renderShoppingList() {
+export function renderShoppingList() {
   shoppingListContainer.innerHTML = '';
   if (!bookArray.length) {
     const emptyMessage = document.createElement('p');

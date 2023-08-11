@@ -1,5 +1,5 @@
 .shopping-list-card__remove-btn__icon {
-  color: white;
+  color: var(--white);
   background: url('../images/trash-03.svg') 0px 2px/18px 18px no-repeat;
 }
 
@@ -42,7 +42,7 @@
 }
 
 .shopping-list-card__category {
-  color: #b4afaf;
+  color: var(--grey);
   font-family: DM Sans;
   font-size: 12px;
   font-style: normal;
@@ -53,7 +53,7 @@
 }
 
 .shopping-list-card__description {
-  color: #111;
+  color: var(--black);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -63,7 +63,7 @@
 }
 
 .shopping-list-card__author {
-  color: #b4afaf;
+  color: var(--grey);
   font-size: 12px;
   font-style: italic;
   font-weight: 400;

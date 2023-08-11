@@ -1,4 +1,5 @@
-import { imgSrcs } from "./pop-up.js";
+import { imgSrcs } from './pop-up.js';
+import { renderShoppingList } from './shopping-list.js';
 
 const Theme = {
   DARK: 'dark-theme',
@@ -20,12 +21,22 @@ btn.addEventListener('change', e => {
     logoLight.style.display = 'inline-block';
     imgSrcs.amazonSrcX1 = require('../images/modal/image-1@1x.png');
     imgSrcs.amazonSrcX2 = require('../images/modal/image-1@2x.png');
+    if (window.location.href.includes('cart.html')) {
+      imgSrcs.amazonSrcX1 = require('../images/modal/image-1@1x.png');
+      imgSrcs.amazonSrcX2 = require('../images/modal/image-1@2x.png');
+      renderShoppingList();
+    }
   } else {
     sessionStorage.setItem('theme', Theme.DARK);
     imgSrcs.amazonSrcX1 = require('../images/modal/amazon-dark.png');
     imgSrcs.amazonSrcX2 = require('../images/modal/amazon-dark2x.png');
     logoLight.style.display = 'none';
     logoDark.style.display = 'inline-block';
+    if (window.location.href.includes('cart.html')) {
+      imgSrcs.amazonSrcX1 = require('../images/modal/amazon-dark.png');
+      imgSrcs.amazonSrcX2 = require('../images/modal/amazon-dark2x.png');
+      renderShoppingList();
+    }
   }
 });
 
@@ -36,6 +47,11 @@ function currentTheme() {
     btn.checked = true;
     imgSrcs.amazonSrcX1 = require('../images/modal/amazon-dark.png');
     imgSrcs.amazonSrcX2 = require('../images/modal/amazon-dark2x.png');
+    if (window.location.href.includes('cart.html')) {
+      imgSrcs.amazonSrcX1 = require('../images/modal/amazon-dark.png');
+      imgSrcs.amazonSrcX2 = require('../images/modal/amazon-dark2x.png');
+      renderShoppingList();
+    }
     logoLight.style.display = 'none';
     logoDark.style.display = 'inline-block';
   } else {
@@ -43,5 +59,10 @@ function currentTheme() {
     btn.checked = false;
     imgSrcs.amazonSrcX1 = require('../images/modal/image-1@1x.png');
     imgSrcs.amazonSrcX2 = require('../images/modal/image-1@2x.png');
+    if (window.location.href.includes('cart.html')) {
+      imgSrcs.amazonSrcX1 = require('../images/modal/image-1@1x.png');
+      imgSrcs.amazonSrcX2 = require('../images/modal/image-1@2x.png');
+      renderShoppingList();
+    }
   }
 }
