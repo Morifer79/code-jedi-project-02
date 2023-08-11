@@ -195,8 +195,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--yellow);
-    border-radius: 36px;
   }
 
   .header-page-home {
@@ -267,4 +265,10 @@
   .header-list {
     gap: 24px;
   }
+}
+
+.active {
+  border-radius: 36px;
+  background: var(--yellow);
+  padding: 8px 16px;
 }

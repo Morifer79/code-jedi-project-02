@@ -43,7 +43,7 @@
 
 .shopping-list-card__category {
   color: var(--grey);
-  font-family: DM Sans;
+  font-family: var(--font-family);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -93,11 +93,6 @@
 
 .shopping-list-card__remove-btn__icon {
   fill: var(--white);
-}
-
-.support-wrap {
-  display: flex;
-  gap: 40px;
 }
 
 .empty_msg {

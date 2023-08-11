@@ -80,13 +80,11 @@ if (isUser) {
 
 const homeLink = document.querySelector('.header-page-home');
 const cartLink = document.querySelector('.header-page-shop');
+const cartItem = document.querySelector('.js-shopping-cart-btn');
+
 const currentLocation = window.location.href;
 
-function changeStatusPage(href) {
-  if (homeLink.getAttribute('href').includes(href) || !cartLink) {
-    return homeLink.classList.add('active');
-  }
-  return cartLink.classList.add('active');
+if (currentLocation.includes(cartLink.getAttribute('href'))) {
+  cartItem.classList.add('active');
+  homeLink.classList.remove('active');
 }
-
-changeStatusPage(currentLocation);
