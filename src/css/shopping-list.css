@@ -1,0 +1,147 @@
+.shopping-list-card__remove-btn__icon {
+  color: white;
+  background: url('../images/trash-03.svg') 0px 2px/18px 18px no-repeat;
+}
+
+.shopping-list-card__title-spn {
+  color: var(--violet);
+}
+
+.shopping-list-card {
+  display: flex;
+  position: relative;
+  width: 996px;
+  height: 213px;
+  border-radius: 16px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  margin-bottom: 20px;
+}
+.shopping-list-card_info {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-list-card__hdr {
+  margin-bottom: 40px;
+  font-size: 48px;
+  line-height: 1.08;
+  letter-spacing: -1.92px;
+}
+
+.shopping-list-card__image {
+  padding: 24px;
+}
+
+.shopping-list-card__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+  padding-top: 30px;
+}
+
+.shopping-list-card__category {
+  color: #b4afaf;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: 0.36px;
+  padding-top: 4px;
+}
+
+.shopping-list-card__description {
+  color: #111;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.28;
+  letter-spacing: -0.56px;
+  padding-top: 10px;
+}
+
+.shopping-list-card__author {
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -0.48px;
+  padding-top: 48px;
+}
+
+.shopping-list-card__linksul {
+  display: flex;
+  gap: 16px;
+  position: absolute;
+  right: 24px;
+  bottom: 2px;
+}
+
+.shopping-list-card__remove-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background-color: var(--violet);
+  border-color: var(--violet);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.shopping-list-card__remove-btn__icon {
+  fill: var(--white);
+}
+
+.support-wrap {
+  display: flex;
+  gap: 40px;
+}
+
+.empty_msg {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: -0.36px;
+  margin-top: 235px;
+  margin-bottom: 20px;
+  margin-left: 250px;
+}
+
+.empty_div {
+  background: url(../images/shopping-list-desk-tab.png) 0px 0px/ 322px 241px no-repeat;
+  width: 322px;
+  height: 241px;
+  margin-left: 320px;
+}
+
+/* @media screen and (min-width: 768px) {
+  .empty_msg {
+    margin-top: 235px;
+    margin-bottom: 20px;
+    margin-left: 250px;
+  }
+
+  .empty_div {
+    width: 322px;
+    height: 241px;
+    margin-left: 320px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .empty_msg {
+    margin-top: 235px;
+    margin-bottom: 20px;
+    margin-left: 250px;
+  }
+
+  .empty_div {
+    width: 322px;
+    height: 241px;
+    margin-left: 320px;
+  }
+} */
