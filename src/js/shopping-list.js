@@ -31,7 +31,10 @@ if (window.location.href.includes('cart.html')) {
   loader.classList.remove('hide');
   renderShoppingList();
   shoppingListContainer.addEventListener('click', event => {
-    if (event.target.classList.contains('shopping-list-card__remove-btn')) {
+    if (
+      event.target.classList.contains('shopping-list-card__remove-btn') ||
+      event.target.classList.contains('shopping-list-card__remove-btn__icon')
+    ) {
       const bookIndex = bookArray.find(
         el => el._id === event.target.getAttribute('id')
       );
