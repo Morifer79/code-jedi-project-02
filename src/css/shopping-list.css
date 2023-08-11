@@ -183,8 +183,8 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .support .cart-support-hide {
-    display: unset;
+  .cart-support-hide .support {
+    display: block;
   }
 
   .empty_msg {
