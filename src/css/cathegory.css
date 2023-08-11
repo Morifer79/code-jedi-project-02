@@ -146,7 +146,7 @@
       display: block;
     }
   }
-  .home-card-overlay {
+  /* .home-card-overlay {
     display: block;
     position: absolute;
     top: 187px;
@@ -165,7 +165,7 @@
     line-height: 1.29;
     letter-spacing: -0.56px;
     text-transform: uppercase;
-  }
+  } */
 
   .book-card:is(:hover, :focus) .home-card-overlay {
     transform: translateY(0%);

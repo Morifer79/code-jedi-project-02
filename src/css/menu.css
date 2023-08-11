@@ -47,7 +47,7 @@ display: none;
   border-radius: 18px;
   border: 1.5px solid var(--black);
   background-color: var(--violet);
-padding: 0 14px;
+	padding: 0 14px;
   position: absolute;
   top: 104px;
   left: 20px;
@@ -72,15 +72,15 @@ color: var(--white);
 
 .imghelper{
 position: relative;
-  flex-shrink: 0;
+  /* flex-grow: 1; */
   
       height: 439px;
       position: relative;
-      top: 480px;
+      top: 340px;
       
 }
 
-                     
+
 
 .menu-user-icon{
   width: 37px;
@@ -216,6 +216,12 @@ padding-top: 17px;
   font-weight: 500;
   line-height: 1.28;
   letter-spacing: -0.56px;
+}
+
+@media screen and (max-width: 767px) {
+	.modal-menu.container{
+		padding: 0;
+	}
 }
 
 @media screen and (min-width: 768px) {
