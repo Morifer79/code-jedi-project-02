@@ -107,7 +107,7 @@
 }
 
 .empty_msg {
-  color: rgba(0, 0, 0, .6);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
@@ -127,9 +127,7 @@
   display: none;
 }
 
-
 @media screen and (min-width: 768px) {
-
   .empty_msg {
     font-size: 18px;
     line-height: 1.33;
@@ -174,7 +172,6 @@
     right: 14px;
   }
 
-
   .shopping-list-card__remove-btn {
     width: 34px;
     height: 34px;
@@ -183,11 +180,9 @@
   .shopping-list-card__remove-btn__icon {
     background: url('../images/trash-03.svg') 0 2px/18px 18px no-repeat;
   }
-
 }
 
 @media screen and (min-width: 1440px) {
-
   .support .cart-support-hide {
     display: unset;
   }

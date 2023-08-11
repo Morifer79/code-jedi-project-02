@@ -31,7 +31,7 @@
   border: 2px solid var(--black);
   border-radius: 18px;
   transition: opacity var(--transition), visibility var(--transition),
-  transform var(--transition), scale var(--transition);
+    transform var(--transition), scale var(--transition);
 }
 
 .modal.is-hidden {
@@ -52,7 +52,6 @@
   overflow-y: scroll;
 }
 } */
-
 
 /* .modal {
   width: 335px;
@@ -91,7 +90,6 @@
   margin-bottom: 14px;
   overflow: hidden;
 }
-
 
 .modal__title {
   margin-bottom: 4px;
@@ -197,7 +195,6 @@
   text-align: center;
   color: rgba(17, 17, 17, 0.5);
 }
-
 
 /*-------------TABLET------------*/
 

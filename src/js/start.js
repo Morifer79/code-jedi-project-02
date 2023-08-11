@@ -1,6 +1,8 @@
 import Notiflix from 'notiflix';
 import { handleClick } from './header.js';
 import { refss } from './menu.js';
+import { isUser } from './header.js';
+import { handleLogoutBtn } from './header.js';
 const refs = {
   openModalBtn: document.querySelector('[data-modal-open]'),
 
@@ -16,21 +18,26 @@ const refs = {
 };
 
 refs.test.addEventListener('click', toggleModal);
+if (!isUser) {
+  refs.openModalBtn.addEventListener('click', toggleModal);
+}
 
-refs.openModalBtn.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', toggleModal);
 refs.signUpLink.addEventListener('click', toggleAuthMode);
 refs.signInLink.addEventListener('click', toggleAuthMode);
 refs.authForm.addEventListener('submit', handleAuthFormSubmit);
 
 function toggleModal() {
-  refss.menuGrupModal.style.display = 'block';
-  refs.modal.classList.toggle('is-hidden');
-  if (!refs.modal.classList.contains('is-hidden')) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
+  if (!isUser) {
+    refss.menuGrupModal.style.display = 'block';
+    refs.modal.classList.toggle('is-hidden');
+    if (!refs.modal.classList.contains('is-hidden')) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   }
+  return;
 }
 
 function toggleAuthMode(event) {
@@ -57,11 +64,13 @@ function handleAuthFormSubmit(e) {
     };
     const serializedUserData = JSON.stringify(userData);
     sessionStorage.setItem('userData', serializedUserData);
+    refs.openModalBtn.removeEventListener('click', toggleModal);
     Notiflix.Notify.success('Registration successful!');
     setTimeout(() => {
       toggleModal();
       handleClick();
       changeCartIcon();
+      refs.openModalBtn.addEventListener('click', handleLogoutBtn);
     }, 500);
     e.target.reset();
   } else {
