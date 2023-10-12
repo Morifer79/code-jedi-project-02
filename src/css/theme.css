@@ -142,10 +142,7 @@ body.dark-theme .sign-in-link {
   color: rgba(246, 246, 246, 0.5);
 }
 
-body.dark-theme .allcategories-list__btn:hover {
-  color: var(--yellow);
-}
-
+body.dark-theme .allcategories-list__btn:hover,
 body.dark-theme .allcategories-list__btn:focus {
   color: var(--yellow);
 }
@@ -160,4 +157,17 @@ body.dark-theme .shopping-list-card__description {
 
 body.dark-theme .shop-list-card__description {
   color: var(--white);
+}
+
+body.dark-theme .header-page-home{
+	color: var(--white);
+}
+
+body.dark-theme .header-page-shop.active,
+body.dark-theme .header-page-home.active{
+	color: var(--black);
+}
+
+body.dark-theme .btn-user-text-menu-header{
+	color: var(--black);
 }

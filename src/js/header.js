@@ -72,11 +72,11 @@ const homeLink = document.querySelector('.header-page-home');
 const cartLink = document.querySelector('.header-page-shop');
 const currentLocation = window.location.href;
 
-function changeStatusPage(href) {
-  if (homeLink.getAttribute('href').includes(href) || !cartLink) {
-    return homeLink.classList.add('active');
+function changeStatusPage() {
+	if (currentLocation.includes('cart.html')) {
+		return cartLink.classList.add('active');
   }
-  return cartLink.classList.add('active');
+  return homeLink.classList.add('active');
 }
 
 changeStatusPage(currentLocation);
