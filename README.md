@@ -2,23 +2,22 @@
 
 ![Bookshelf](./src/images/bookshelf.jpg)
 
-This project was created using [Parcel](https://parceljs.org/).    
-This app is designed for book shopping and offers the user to search for books by category and sort purchases into a shopping cart. There is also an opportunity to switch to one of three trading platforms on this topic. 
+This group project was created using [Parcel](https://parceljs.org/).    
+
+The web app is designed for book shopping and allows the user to search for books by category and sort purchases into a shopping cart. There is also an opportunity to switch to one of three trading platforms on this topic. 
 
 ## 𝔽𝕖𝕒𝕥𝕦𝕣𝕖𝕤 𝕒𝕟𝕕 𝕋𝕖𝕔𝕙𝕟𝕠𝕝𝕠𝕘𝕚𝕖𝕤 ᎓  
 
 <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/></a>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" title="React" alt="React" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/redux/redux-original.svg" title="Redux" alt="Redux" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="npm" alt="npm" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/figma/figma-original.svg" title="Figma" alt="Figma" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original-wordmark.svg" title="VSCode" alt="VSCode" width="40" height="40"/>&nbsp;  
   
 ※ Realized registration.  
 ※ View a categories list of available books.  
-※ Add selected books to cart. 
+※ Add selected books to the cart. 
 ※ Sidebar with support.   
 ※ Easy scrolling to the top.
 ※ Working with backend requests.
