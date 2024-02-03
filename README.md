@@ -17,11 +17,11 @@ The web app is designed for book shopping and allows the user to search for book
   
 ※ Realized registration.  
 ※ View a categories list of available books.  
-※ Add selected books to the cart. 
+※ Add selected books to the cart.  
 ※ Sidebar with support.   
-※ Easy scrolling to the top.
-※ Working with backend requests.
-※ Libraries used: axios, basiclightbox, swiper, notiflix.
+※ Easy scrolling to the top.  
+※ Working with backend requests.  
+※ Libraries used: axios, basiclightbox, swiper, notiflix.  
 
 ## 𝕀𝕟𝕤𝕥𝕒𝕝𝕝𝕒𝕥𝕚𝕠𝕟 ᎓  
 
